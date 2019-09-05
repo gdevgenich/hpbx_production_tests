@@ -1,0 +1,137 @@
+"ca1-001":
+    name: "imqa-ca1-3did"
+    hp_id: "1638120"
+    readonly: False
+    autoremove: True
+    autocreate: True
+    server: "64.78.52.88"
+    phone_numbers:
+        - "12182620837"
+        - "12182620843"
+        - "12182633028"
+    provider_prefix: "61836755"
+    extension_length: 3
+    language: "fr"
+
+"ca1-002":
+    name: "imqa-ca1-2did"
+    hp_id: "1638121"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.88"
+    phone_numbers:
+        - "16067160156"
+        - "16067180157"
+    provider_prefix: "61836763"
+    extension_length: 3
+    language: "fr"
+
+"ca1-003":
+    name: "imqa-ca1-1did"
+    hp_id: "1638122"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.88"
+    phone_numbers:
+        - "14193593019"
+    provider_prefix: "61836771"
+    extension_length: 3
+    language: "fr"
+
+"ca1-011-al":
+    name: "1408733-al"
+    hp_id: "1408733"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.88"
+    phone_numbers:
+        - "14256584451"
+        - "14256584475"
+        - "14256584477"
+    al_leid: "1015911"
+    extension_length: 3
+    language: "fr"
+
+"ca1-012-al":
+    name: "1408734-al"
+    hp_id: "1408734"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.88"
+    phone_numbers:
+        - "14256584482"
+        - "14256584500"
+    al_leid: "1015912"
+    extension_length: 3
+    language: "fr"
+
+"ca1-013-al":
+    name: "1408735-al"
+    hp_id: "1408735"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.88"
+    phone_numbers:
+        - "14256584513"
+    al_leid: "1015913"
+    extension_length: 3
+    language: "fr"
+
+"production-ca1":
+    name: "production"
+    readonly: True
+    server: "64.78.52.92"
+    users:
+          - extension: '101'
+            display_name: 'ca3_user101_12026002941'
+            phone_number: '12026002941'
+            devices:
+                - name: 'user101'
+                  device_id: '81800503'
+                  pwd: 'JgEPveGu'
+          - extension: '102'
+            display_name: 'ca3_user102_12032269409'
+            phone_number: '12032269409'
+            devices:
+                - name: 'user102'
+                  device_id: '22629973'
+                  pwd: 'EeGgxZDw'
+          - extension: '103'
+            display_name: 'ca1_user103_12018752475'
+            phone_number: '12018752475'
+            devices:
+                - name: 'user103'
+                  device_id: '78479801'
+                  pwd: 'It4OD7C3'
+
+"production-ca1-ng":
+    name: "production-ng"
+    readonly: True
+    server: "64.78.52.92"
+    users:
+          - extension: '104'
+            display_name: 'ca3_user104_12027190438'
+            phone_number: '12027190438'
+            devices:
+                - name: 'user104'
+                  device_id: '44509095'
+                  pwd: 'M26MdlVD'
+          - extension: '105'
+            display_name: 'ca3_user105_12032273211'
+            phone_number: '12032273211'
+            devices:
+                - name: 'user105'
+                  device_id: '97091805'
+                  pwd: 'WmDJo7kj'
+          - extension: '106'
+            display_name: 'ca1_user106_12042724038'
+            phone_number: '12042724038'
+            devices:
+                - name: 'user106'
+                  device_id: '88136393'
+                  pwd: 'JjOhOyeL'

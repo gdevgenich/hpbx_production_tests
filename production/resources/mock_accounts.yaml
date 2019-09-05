@@ -1,0 +1,43 @@
+"ca1-001":
+    name: "imqa-ca1-3did"
+    hp_id: "1638120"
+    readonly: False
+    autoremove: True
+    autocreate: True
+    server: "64.78.52.92"
+    phone_numbers:
+        - "12182620837"
+        - "12182620843"
+        - "12182633028"
+    provider_prefix: "61836755"
+    extension_length: 3
+    language: "fr"
+    db_access: False
+
+"production-ish":
+    name: "production-ish"
+    readonly: True
+    server: "64.78.52.88"
+    users:
+      - extension: "227"
+        display_name: "DANBURY      CT"
+        phone_number: "12014509511"
+        devices:
+          - name: "user17"
+            device_id: "82164235"
+            pwd: "F7OSBoW5"
+      - extension: "229"
+        display_name: "DANBURY      CT"
+        phone_number: "12026002214"
+        devices:
+          - name: "user18"
+            device_id: "74027576"
+            pwd: "JJCGanfD"
+      - extension: "231"
+        display_name: "DANBURY      CT"
+        phone_number: "12034561629"
+        devices:
+          - name: "user19"
+            device_id: "76174943"
+            pwd: "Ia58Mxn2"
+    ips_domain: ""

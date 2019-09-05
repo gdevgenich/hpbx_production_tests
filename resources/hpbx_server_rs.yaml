@@ -1,0 +1,110 @@
+"ca6-rs1":
+    name: "rs1"
+    hp_id: "004"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.94"
+    phone_numbers:
+        - "16503516732"
+        - "16503521131"
+        - "16503524022"
+    provider_prefix: "60055779"
+    extension_length: 3
+    language: "fr"
+
+"ca6-rs2":
+    name: "rs2"
+    hp_id: "005"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.94"
+    phone_numbers:
+        - "16503524023"
+        - "16503524024"
+    provider_prefix: "60055720"
+    extension_length: 3
+    language: "fr"
+
+"ca6-rs3":
+    name: "rs3"
+    hp_id: "006"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.94"
+    phone_numbers:
+        - "16503524029"
+    provider_prefix: "60055746"
+    extension_length: 3
+    language: "en"
+
+"ca6-rs1-al":
+    name: "rs1-al"
+    hp_id: "014"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.94"
+    phone_numbers:
+        - "14252424410"
+        - "14252424412"
+        - "14252424413"
+    al_leid: "1008227"
+    extension_length: 3
+    language: "en"
+
+"ca6-rs2-al":
+    name: "rs2-al"
+    hp_id: "015"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.94"
+    phone_numbers:
+        - "14252424440"
+        - "14252424443"
+    al_leid: "1008229"
+    extension_length: 3
+    language: "en"
+
+"ca6-rs3-al":
+    name: "rs3-al"
+    hp_id: "016"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.94"
+    phone_numbers:
+        - "14252424448"
+    al_leid: "1013252"
+    extension_length: 3
+    language: "en"
+
+"production-rs":
+    name: "production-rs"
+    readonly: True
+    server: "64.78.52.88"
+    users:
+          - extension: '204'
+            display_name: 'ca1_user04_12177185186'
+            phone_number: '12177185186'
+            devices:
+                - name: 'user04'
+                  device_id: '39739175'
+                  pwd: 'qBkc5maZ'
+          - extension: '205'
+            display_name: 'ca1_user05_12176152088'
+            phone_number: '12176152088'
+            devices:
+                - name: 'user05'
+                  device_id: '60314135'
+                  pwd: 'GeXbu54i'
+          - extension: '206'
+            display_name: 'ca1_user06_12176152089'
+            phone_number: '12176152089'
+            devices:
+                - name: 'user06'
+                  device_id: '16846920'
+                  pwd: '8VxK3mwS'

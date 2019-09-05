@@ -1,0 +1,95 @@
+"ca3-001":
+    name: "imqa-ca3-3did"
+    hp_id: "1638123"
+    readonly: False
+    autoremove: True
+    autocreate: True
+    server: "64.78.52.92"
+    phone_numbers:
+        - "13103637790"
+        - "13104579100"
+        - "13104994947"
+    provider_prefix: "61836789"
+    extension_length: 3
+    language: "fr"
+
+"ca3-002":
+    name: "imqa-ca3-2did"
+    hp_id: "1638125"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.92"
+    phone_numbers:
+        - "15705078678"
+        - "15705078679"
+    provider_prefix: "61836706"
+    extension_length: 3
+    language: "fr"
+
+"ca3-003":
+    name: "imqa-ca3-1did"
+    hp_id: "1638126"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "64.78.52.92"
+    phone_numbers:
+        - "12092751327"
+    provider_prefix: "61836714"
+    extension_length: 3
+    language: "fr"
+
+"production-ca3":
+    name: "production"
+    readonly: True
+    server: "64.78.52.88"
+    users:
+          - extension: '101'
+            display_name: 'ca1_user101_12014509904'
+            phone_number: '12014509904'
+            devices:
+                - name: 'user101'
+                  device_id: '45280712'
+                  pwd: 'FVUev0Pm'
+          - extension: '102'
+            display_name: 'ca1_user102_12042724034'
+            phone_number: '12042724034'
+            devices:
+                - name: 'user102'
+                  device_id: '27720944'
+                  pwd: '3yZbp1uD'
+          - extension: '103'
+            display_name: 'ca1_user103_12027190439'
+            phone_number: '12027190439'
+            devices:
+                - name: 'user103'
+                  device_id: '24888071'
+                  pwd: 'mKuUcYtL'
+
+"production-ca3-ng":
+    name: "production-ng"
+    readonly: True
+    server: "64.78.52.88"
+    users:
+          - extension: '104'
+            display_name: 'ca1_user104_12014509905'
+            phone_number: '12014509905'
+            devices:
+                - name: 'user104'
+                  device_id: '47079808'
+                  pwd: 'TziwLfWo'
+          - extension: '105'
+            display_name: 'ca1_user105_12042724037'
+            phone_number: '12042724037'
+            devices:
+                - name: 'user105'
+                  device_id: '87401809'
+                  pwd: 'RwXpgHhZ'
+          - extension: '106'
+            display_name: 'ca1_user106_12033502531'
+            phone_number: '12033502531'
+            devices:
+                - name: 'user106'
+                  device_id: '17091804'
+                  pwd: 'G9EuPWgZ'
