@@ -34,7 +34,7 @@ class TestProgram(object):
 
         # Step 2. Reading parameters
         cr = ContextReader()
-        config_name = "./production/settings/settings_hpbx2.xml"
+        config_name = "./settings/settings_hpbx2.xml"
         name = argv[1]
         admin_login = argv[2]
         admin_password = argv[3]
@@ -66,7 +66,7 @@ class TestProgram(object):
         """
 
         # Step 1. Prepare logging system
-        prepare_logging_system(name="./production/resources/logging.yaml")
+        prepare_logging_system(name="./resources/logging.yaml")
 
         # Create test runner (test run iterator)
         runner = PBXTestRunner(loader=DirectoryTestLoader(), failfast=False)

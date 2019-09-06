@@ -1,5 +1,0 @@
-"mock":
-    ng: False
-    accounts: "./production/resources/mock_accounts.yaml"
-    main_acc: "ca1-001"
-    external_acc: "production-ish"

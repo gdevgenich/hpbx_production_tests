@@ -29,7 +29,7 @@ class Automation_functional_tests(PBXTestSuite):
 
         # Step 2. Loading profile
         # read profiles
-        with open("./production/resources/hpbx_profile.yaml") as stream:
+        with open("./resources/hpbx_profile.yaml") as stream:
                 content = stream.read()
         res = loads(content)
         #
