@@ -112,20 +112,7 @@ class Automation_functional_tests(PBXTestSuite):
         unison_password = self.context.get("unison_password", default_value=None)
         self.main_account.initialize(unison_login=unison_login, unison_password=unison_password)
         self.main_account.create_in_account(
-            number_of_users=6, number_of_ccusers=6,
-            number_of_aas=2,
-            number_of_hgs=3, number_of_ccs=2)
-
-        self.main_account.create_new_pickup_group()
-        self.main_account.create_new_pickup_group()
-
-        self.main_account.create_new_paging_group()
-
-        self.main_account.create_new_vm_group()
-
-        self.main_account.create_new_resource()
-        self.main_account.create_new_faxowner()
-        self.main_account.create_new_confbridge()
+            number_of_users=3, number_of_aas=1)
 
         self.external_account.initialize()
 
@@ -135,86 +122,24 @@ class Automation_functional_tests(PBXTestSuite):
         self.user1 = self.main_account.acquire_user()
         self.user2 = self.main_account.acquire_user()
         self.user3 = self.main_account.acquire_user()
-        self.user4 = self.main_account.acquire_user()
-        self.user5 = self.main_account.acquire_user()
-        self.user6 = self.main_account.acquire_user()
-
-        self.ccuser1 = self.main_account.acquire_ccuser()
-        self.ccuser2 = self.main_account.acquire_ccuser()
-        self.ccuser3 = self.main_account.acquire_ccuser()
-        self.ccuser4 = self.main_account.acquire_ccuser()
-        self.ccuser5 = self.main_account.acquire_ccuser()
-        self.ccuser6 = self.main_account.acquire_ccuser()
-
-        self.resource = self.main_account.acquire_resource()
-        self.faxowner = self.main_account.acquire_faxowner()
-        self.confbridge = self.main_account.acquire_confbridge()
 
         self.external_user1 = self.external_account.acquire_user()
         self.external_user2 = self.external_account.acquire_user()
         self.external_user3 = self.external_account.acquire_user()
 
-        self.hg1 = self.main_account.acquire_hg()
-        self.hg2 = self.main_account.acquire_hg()
-        self.hg3 = self.main_account.acquire_hg()
-
-        self.cc1 = self.main_account.acquire_cc()
-        self.cc2 = self.main_account.acquire_cc()
-
         self.aa1 = self.main_account.acquire_aa()
-        self.aa2 = self.main_account.acquire_aa()
 
-        self.pupg1 = self.main_account.acquire_pupg()
-        self.pupg2 = self.main_account.acquire_pupg()
-
-        self.pg1 = self.main_account.acquire_pg()
-
-        self.vmg1 = self.main_account.acquire_vmg()
 
         self.context.set("user1", self.user1)
         self.context.set("user2", self.user2)
         self.context.set("user3", self.user3)
-        self.context.set("user4", self.user4)
-
-        self.context.set("ccuser1", self.ccuser1)
-        self.context.set("ccuser2", self.ccuser2)
-        self.context.set("ccuser3", self.ccuser3)
-        self.context.set("ccuser4", self.ccuser4)
-        self.context.set("ccuser5", self.ccuser5)
-        self.context.set("ccuser6", self.ccuser6)
-
-        self.context.set("user5", self.user5)
-        self.context.set("offline_user1", self.user6)
-        self.context.set("resource", self.resource)
-        self.context.set("faxowner", self.faxowner)
-        self.context.set("confbridge", self.confbridge)
 
         self.context.set("external_user1", self.external_user1)
         self.context.set("external_user2", self.external_user2)
         self.context.set("external_user3", self.external_user3)
 
-        # HGs
-        self.context.set("hg1", self.hg1)
-        self.context.set("hg2", self.hg2)
-        self.context.set("hg3", self.hg3)
-
-        # CCs
-        self.context.set("cc1", self.cc1)
-        self.context.set("cc2", self.cc2)
-
         # AAs
         self.context.set("aa1", self.aa1)
-        self.context.set("aa2", self.aa2)
-
-        # PickUp groups
-        self.context.set("pupg1", self.pupg1)
-        self.context.set("pupg2", self.pupg2)
-
-        # Paging groups
-        self.context.set("pg1", self.pg1)
-
-        # Voicemail groups
-        self.context.set("vmg1", self.vmg1)
 
         # Test data
         with open("./resources/vm_transcript.txt") as f:
