@@ -67,17 +67,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.main_account.release_user(self.user2)
         self.main_account.release_user(self.user3)
         self.main_account.release_user(self.user4)
-        self.main_account.release_user(self.user5)
-        self.main_account.release_user(self.user6)
-
-        self.main_account.release_user(self.ccuser1)
-        self.main_account.release_user(self.ccuser2)
-        self.main_account.release_user(self.ccuser3)
-        self.main_account.release_user(self.ccuser4)
-
-        self.main_account.release_user(self.resource)
-        self.main_account.release_user(self.faxowner)
-        self.main_account.release_user(self.confbridge)
 
         self.external_account.release_user(self.external_user1)
         self.external_account.release_user(self.external_user2)
@@ -112,7 +101,8 @@ class Automation_functional_tests(PBXTestSuite):
         unison_password = self.context.get("unison_password", default_value=None)
         self.main_account.initialize(unison_login=unison_login, unison_password=unison_password)
         self.main_account.create_in_account(
-            number_of_users=3, number_of_aas=1)
+            number_of_users=5, number_of_aas=1, number_of_hgs=1)
+        self.main_account.create_new_vm_group()
 
         self.external_account.initialize()
 
@@ -122,17 +112,22 @@ class Automation_functional_tests(PBXTestSuite):
         self.user1 = self.main_account.acquire_user()
         self.user2 = self.main_account.acquire_user()
         self.user3 = self.main_account.acquire_user()
+        self.user4 = self.main_account.acquire_user()
+        self.user5 = self.main_account.acquire_user()
 
         self.external_user1 = self.external_account.acquire_user()
         self.external_user2 = self.external_account.acquire_user()
         self.external_user3 = self.external_account.acquire_user()
 
         self.aa1 = self.main_account.acquire_aa()
-
+        self.hg1 = self.main_account.acquire_hg()
+        self.vmg1 = self.main_account.acquire_vmg()
 
         self.context.set("user1", self.user1)
         self.context.set("user2", self.user2)
         self.context.set("user3", self.user3)
+        self.context.set("user4", self.user4)
+        self.context.set("user5", self.user5)
 
         self.context.set("external_user1", self.external_user1)
         self.context.set("external_user2", self.external_user2)
@@ -140,6 +135,9 @@ class Automation_functional_tests(PBXTestSuite):
 
         # AAs
         self.context.set("aa1", self.aa1)
+        self.context.set("hg1", self.hg1)
+        self.context.set("vmg1", self.vmg1)
+        self.user1.account.enable_vm_transcript()
 
         # Test data
         with open("./resources/vm_transcript.txt") as f:
