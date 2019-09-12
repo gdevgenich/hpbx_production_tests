@@ -47,7 +47,6 @@ class check_callee(PBXTestSuite):
         self.user1.change_timeout(20)
         self.user2.change_timeout(20)
         self.user3.change_timeout(20)
-        self.user4.change_timeout(20)
 
         self.blf = self.user4.acquire_blf_client(self.bf)
         sleep(2)
