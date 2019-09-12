@@ -18,7 +18,7 @@ class NG_18110(StepTestCase):
         self.context = Context.instance()
 
         self.user1 = self.context.get('external_user1')
-        self.user2 = self.context.get('user1')
+        self.user2 = self.context.get('user4')
 
     def initialize(self, sm):
         # build execute info

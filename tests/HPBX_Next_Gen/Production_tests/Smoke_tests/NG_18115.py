@@ -18,15 +18,13 @@ class NG_18115(StepTestCase):
     def setUp(self):
         self.context = Context.instance()
 
-        self.user1 = self.context.get('user1')
+        self.user1 = self.context.get('user4')
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
-        self.user4 = self.context.get('user4')
 
         self.pg1 = self.context.get('pg1')
         self.pg1.add_member_to_pg(self.user2)
         self.pg1.add_member_to_pg(self.user3)
-        self.pg1.add_member_to_pg(self.user4)
 
     def initialize(self, sm):
 
@@ -34,7 +32,7 @@ class NG_18115(StepTestCase):
         execute_info = {
             "bob": self.user1.get_sipre_client(),
             "alice": self.user2.get_sipre_client(),
-            "listeners": [self.user3.get_sipre_client(), self.user4.get_sipre_client()],
+            "listeners": [self.user3.get_sipre_client()],
             "call_to": self.user1.get_sip_uri(self.pg1.get_extension()),
             "default_check_audio": True,
             "convert_to_call": self.user1.get_account().get_page_to_twowaycall_action(),
@@ -48,10 +46,8 @@ class NG_18115(StepTestCase):
                   'to': self.pg1.get_extension(), 'called_name': self.user2.get_display_name()}
         call_2 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
                   'to': self.pg1.get_extension(), 'called_name': self.user3.get_display_name()}
-        call_3 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
-                  'to': self.pg1.get_extension(), 'called_name': self.user4.get_display_name()}
 
-        sm.add_step("Check call history").add_expected(self.user1.get_account().check_call_history, calls=[call_1, call_2, call_3])
+        sm.add_step("Check call history").add_expected(self.user1.get_account().check_call_history, calls=[call_1, call_2])
 
     def tearDown(self):
         pass

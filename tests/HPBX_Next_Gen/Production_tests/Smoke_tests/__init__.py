@@ -39,7 +39,7 @@ class check_callee(PBXTestSuite):
         # prepare phone numbers
         self.user1.get_account().unassign_all_phone_numbers()
         #
-        self.user1.assign_phone_number()
+        self.user4.assign_phone_number()
 
         self.user1.acquire_sip_client(self.cf)
         self.user2.acquire_sip_client(self.cf)
