@@ -27,12 +27,14 @@ class check_callee(PBXTestSuite):
         self.user3 = self.context.get('user3')
         self.user4 = self.context.get('user4')
         self.user5 = self.context.get('user5')
+        self.user6 = self.context.get('user6')
 
         self.user1.cleanup()
         self.user2.cleanup()
         self.user3.cleanup()
         self.user4.cleanup()
         self.user5.cleanup()
+        self.user6.cleanup()
 
         self.external_user1 = self.context.get('external_user1')
 
@@ -45,6 +47,7 @@ class check_callee(PBXTestSuite):
         self.user2.acquire_sip_client(self.cf)
         self.user3.acquire_sip_client(self.cf)
         self.user4.acquire_sip_client(self.cf)
+        self.user6.acquire_sip_client(self.cf)
         self.external_user1.acquire_sip_client(self.cf)
 
         self.user1.change_timeout(20)
