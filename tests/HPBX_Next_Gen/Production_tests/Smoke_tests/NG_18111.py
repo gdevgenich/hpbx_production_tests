@@ -9,9 +9,9 @@ from call_functions import BaseParkLeft, TwoWayCheckAudio
 from call_functions.matchers.matchers import devices_on_call, no_active_calls_remain, check_blf_state
 
 
-class NG_14788(StepTestCase):
+class NG_18111(StepTestCase):
     """
-    @name: NG-14788
+    @name: NG-18111
     @summary: Call parked from left leg unparked by other internal user
     @suite: HPBX_Next_Gen.Automation_functional_tests.Call_Parking.Internal_user_parked
     """
