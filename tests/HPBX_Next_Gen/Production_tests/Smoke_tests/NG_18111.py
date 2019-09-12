@@ -69,8 +69,8 @@ class NG_18111(StepTestCase):
                   'to': park_location, 'called_name': 'PARK'}
         call_3 = {'from': self.user2.get_extension(), 'caller_name': self.user2.get_display_name(),
                   'to': park_location, 'called_name': 'PARKED'}
-        call_4 = {'from': self.user3.get_extension(), 'caller_name': self.user3.get_display_name(),
-                  'to': self.user2.get_extension(), 'called_name': self.user2.get_display_name()}
+        call_4 = {'from': self.user2.get_extension(), 'caller_name': self.user2.get_display_name(),
+                  'to': self.user3.get_extension(), 'called_name': self.user3.get_display_name()}
         call_5 = {'from': self.user3.get_extension(), 'caller_name': self.user3.get_display_name(),
                   'to': park_location, 'called_name': 'UNPARKING'}
         sm.add_step("Check call history").add_expected(self.user1.get_account().check_call_history,
