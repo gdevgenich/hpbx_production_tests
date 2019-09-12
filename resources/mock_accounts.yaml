@@ -12,7 +12,6 @@
     hpbx_ips_server_name: "qapbx-ca1"
     ips_domain: "qapresence02.qaserverdata.net"
     db_access: False
-    ng: True
 
 "hpbx026":
     name: "imqa-unite-dg1"
