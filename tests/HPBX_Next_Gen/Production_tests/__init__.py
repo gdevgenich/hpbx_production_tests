@@ -100,7 +100,7 @@ class Automation_functional_tests(PBXTestSuite):
         unison_password = self.context.get("unison_password", default_value=None)
         self.main_account.initialize(unison_login=unison_login, unison_password=unison_password)
         self.main_account.create_in_account(
-            number_of_users=6, number_of_aas=1, number_of_hgs=1)
+            number_of_users=4, number_of_aas=1, number_of_hgs=1)
         self.main_account.create_new_vm_group()
         self.main_account.create_new_paging_group()
 
@@ -113,8 +113,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.user2 = self.main_account.acquire_user()
         self.user3 = self.main_account.acquire_user()
         self.user4 = self.main_account.acquire_user()
-        self.user5 = self.main_account.acquire_user()
-        self.user6 = self.main_account.acquire_user()
 
         self.external_user1 = self.external_account.acquire_user()
 
@@ -127,8 +125,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.context.set("user2", self.user2)
         self.context.set("user3", self.user3)
         self.context.set("user4", self.user4)
-        self.context.set("user5", self.user5)
-        self.context.set("user6", self.user6)
 
         self.context.set("external_user1", self.external_user1)
 
