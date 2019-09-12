@@ -48,6 +48,7 @@ class NG_18109(StepTestCase):
 
         check_call_gcrb.add_substeps_to_step(sm.find_step("Check devices are connected"))
         check_call_audio.add_substeps_to_step(sm.find_step("Check devices are connected"))
+        sm.add_step("Wait for recording", duration=5.0)
         check_cr.add_substeps_to_step(sm.add_step("Check CR"))
 
     def tearDown(self):
