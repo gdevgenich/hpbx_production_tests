@@ -103,6 +103,7 @@ class Automation_functional_tests(PBXTestSuite):
         self.main_account.create_in_account(
             number_of_users=5, number_of_aas=1, number_of_hgs=1)
         self.main_account.create_new_vm_group()
+        self.main_account.create_new_paging_group()
 
         self.external_account.initialize()
 
@@ -122,6 +123,7 @@ class Automation_functional_tests(PBXTestSuite):
         self.aa1 = self.main_account.acquire_aa()
         self.hg1 = self.main_account.acquire_hg()
         self.vmg1 = self.main_account.acquire_vmg()
+        self.pg1 = self.main_account.acquire_pg()
 
         self.context.set("user1", self.user1)
         self.context.set("user2", self.user2)
@@ -137,6 +139,7 @@ class Automation_functional_tests(PBXTestSuite):
         self.context.set("aa1", self.aa1)
         self.context.set("hg1", self.hg1)
         self.context.set("vmg1", self.vmg1)
+        self.context.set("pg1", self.pg1)
         self.user1.account.enable_vm_transcript()
 
         # Test data
