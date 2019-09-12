@@ -7,7 +7,6 @@ from context import Context
 
 class NG_18102(StepTestCase):
     """
-    @rerun: 1
     @name: NG-18102
     @summary: Leave message for VMG by extension
     @suite: HPBX_Next_Gen.Automation_functional_tests.VM_group

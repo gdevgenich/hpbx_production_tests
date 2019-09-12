@@ -9,7 +9,6 @@ from hpbx_dm import combine_names
 
 class NG_18104(StepTestCase):
     """
-    @rerun: 1
     @name: NG-18104
     @summary: Ring All. All agents logged in
     @suite: HPBX_Next_Gen.Automation_functional_tests.HG.call_from_internal_user
