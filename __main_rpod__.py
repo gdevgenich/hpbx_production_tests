@@ -34,8 +34,8 @@ class TestProgram(object):
 
         # Step 2. Reading parameters
         cr = ContextReader()
-        config_name = "./settings/settings_hpbx2.xml"
         name = argv[1]
+        config_name = "./settings/settings_{name}.xml".format(name=name)
         admin_login = argv[2]
         admin_password = argv[3]
 

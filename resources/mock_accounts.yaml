@@ -12,6 +12,22 @@
     hpbx_ips_server_name: "qapbx-ca1"
     ips_domain: "qapresence02.qaserverdata.net"
     db_access: False
+    ng: True
+
+"hpbx026":
+    name: "imqa-unite-dg1"
+    hp_id: "1667013"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "hpbx026.telecomsvc.com"
+    phone_numbers:
+        - "12065189143"
+    al_leid: "1238784"
+    extension_length: 3
+    db_access: False
+    ng: True
+
 
 "production-ish":
     name: "production-ish"
@@ -25,18 +41,4 @@
           - name: "user17"
             device_id: "82164235"
             pwd: "F7OSBoW5"
-      - extension: "229"
-        display_name: "DANBURY      CT"
-        phone_number: "12026002214"
-        devices:
-          - name: "user18"
-            device_id: "74027576"
-            pwd: "JJCGanfD"
-      - extension: "231"
-        display_name: "DANBURY      CT"
-        phone_number: "12034561629"
-        devices:
-          - name: "user19"
-            device_id: "76174943"
-            pwd: "Ia58Mxn2"
     ips_domain: ""

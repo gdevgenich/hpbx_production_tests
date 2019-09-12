@@ -67,10 +67,9 @@ class Automation_functional_tests(PBXTestSuite):
         self.main_account.release_user(self.user2)
         self.main_account.release_user(self.user3)
         self.main_account.release_user(self.user4)
+        self.main_account.release_user(self.user5)
 
         self.external_account.release_user(self.external_user1)
-        self.external_account.release_user(self.external_user2)
-        self.external_account.release_user(self.external_user3)
         #
         # dispose accounts
         self.main_account.dispose()
@@ -117,8 +116,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.user5 = self.main_account.acquire_user()
 
         self.external_user1 = self.external_account.acquire_user()
-        self.external_user2 = self.external_account.acquire_user()
-        self.external_user3 = self.external_account.acquire_user()
 
         self.aa1 = self.main_account.acquire_aa()
         self.hg1 = self.main_account.acquire_hg()
@@ -132,8 +129,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.context.set("user5", self.user5)
 
         self.context.set("external_user1", self.external_user1)
-        self.context.set("external_user2", self.external_user2)
-        self.context.set("external_user3", self.external_user3)
 
         # AAs
         self.context.set("aa1", self.aa1)
@@ -151,8 +146,6 @@ class Automation_functional_tests(PBXTestSuite):
         if self.ng:
             stdout.write("External users CNAM:\n")
             self.get_cnam(self.external_user1, self.user1)
-            self.get_cnam(self.external_user2, self.user1)
-            self.get_cnam(self.external_user3, self.user1)
 
     def get_cnam(self, external_user, local_user):
         """
