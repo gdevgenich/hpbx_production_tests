@@ -4,7 +4,7 @@
     readonly: False
     autocreate: True
     autoremove: True
-    server: "64.78.52.88"
+    server: "hpbx2.serverdata.net"
     phone_numbers:
         - "14256584482"
     al_leid: "1015912"
