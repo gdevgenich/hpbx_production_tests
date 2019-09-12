@@ -54,12 +54,6 @@ handlers:
         level: DEBUG
         filename: debug_pbxut.log
 
-    file_cp:
-        class : logging.FileHandler
-        formatter: simpleFormater
-        level: DEBUG
-        filename: debug_cp.log
-
     file_testlink:
         class : logging.FileHandler
         formatter: simpleFormater
@@ -191,11 +185,6 @@ loggers:
       level: INFO
       handlers: [file_callflow]
       propagate: 0
-
-    unison_cp_client:
-        level: DEBUG
-        handlers: [file_cp]
-        propagate: 0
 
     hpbx_dm:
         level: DEBUG
