@@ -1,17 +1,16 @@
 "ca1-001":
-    name: "imqa-ca1-3did"
-    hp_id: "1638120"
+    name: "1408734-al"
+    hp_id: "1408734"
     readonly: False
-    autoremove: True
     autocreate: True
-    server: "64.78.52.92"
+    autoremove: True
+    server: "64.78.52.88"
     phone_numbers:
-        - "12182620837"
-        - "12182620843"
-        - "12182633028"
-    provider_prefix: "61836755"
+        - "14256584482"
+    al_leid: "1015912"
     extension_length: 3
-    language: "fr"
+    hpbx_ips_server_name: "qapbx-ca1"
+    ips_domain: "qapresence02.qaserverdata.net"
     db_access: False
 
 "production-ish":

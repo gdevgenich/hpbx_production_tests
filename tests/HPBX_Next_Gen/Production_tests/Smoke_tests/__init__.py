@@ -6,6 +6,8 @@ from time import sleep
 
 from pbxut.framework import PBXTestSuite
 from context import Context
+from audio_functions import AudioFileGenerator
+from hpbx_dm._MediaManager import MediaManager
 
 
 class check_callee(PBXTestSuite):
@@ -38,8 +40,6 @@ class check_callee(PBXTestSuite):
         self.user1.get_account().unassign_all_phone_numbers()
         #
         self.user1.assign_phone_number()
-        self.user2.assign_phone_number()
-        self.user3.assign_phone_number()
 
         self.user1.acquire_sip_client(self.cf)
         self.user2.acquire_sip_client(self.cf)
@@ -59,10 +59,31 @@ class check_callee(PBXTestSuite):
                                                       interval=3500, expire=3600)
         self.context.set('blf_line2', self.blf_line2)
         sleep(3)
+        self.blf_line3 = self.blf.getAC().createLine(name=self.user3.get_extension(),
+                                                     uri=self.user3.get_sip_uri(self.user3.get_extension()),
+                                                     interval=3500, expire=3600)
+        self.context.set('blf_line3', self.blf_line3)
+        sleep(3)
 
         self.aa1 = self.context.get('aa1')
         self.aa1.bh.remove_all_actions()
         self.aa1.bh.create_action(action='ext', dtmf='5', destination=self.user3.get_extension())
+
+        self.user1.get_account().enable_call_recording()
+        gcrb_freqs = [197, 313]
+        gcre_freqs = [127, 617]
+        self.context.set('gcrb_freqs', gcrb_freqs)
+        self.context.set('gcre_freqs', gcre_freqs)
+
+        audiogen = AudioFileGenerator()
+        gcrb_file = audiogen.generate(freqs=gcrb_freqs, duration=8)
+        gcre_file = audiogen.generate(freqs=gcre_freqs, duration=8)
+
+        mm = MediaManager(account=self.user1.get_account())
+        mm.deactivate_gcrb()
+        mm.deactivate_gcre()
+        mm.upload(name='gcrb_197_313', purpose='GCRB', path=gcrb_file)
+        mm.upload(name='gcre_127_617', purpose='GCRE', path=gcre_file)
 
     def tearDownSuite(self):
         self.user1.get_account().unassign_all_phone_numbers()
