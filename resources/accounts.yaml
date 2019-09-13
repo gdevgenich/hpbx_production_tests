@@ -19,7 +19,7 @@
     readonly: False
     autocreate: True
     autoremove: True
-    server: "hpbx026.telecomsvc.com"
+    server: "72.53.172.12"
     phone_numbers:
         - "12065189143"
     al_leid: "1238784"
