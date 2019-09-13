@@ -67,7 +67,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.main_account.release_user(self.user2)
         self.main_account.release_user(self.user3)
         self.main_account.release_user(self.user4)
-        self.main_account.release_user(self.user5)
 
         self.external_account.release_user(self.external_user1)
         #

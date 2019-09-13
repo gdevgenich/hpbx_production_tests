@@ -17,7 +17,7 @@ class NG_18116(StepTestCase):
 
     def setUp(self):
         self.context = Context.instance()
-        self.external_user3 = self.context.get('external_user3')
+        self.external_user3 = self.context.get('external_user1')
         self.user2 = self.context.get('user1')
         self.user3 = self.context.get('user2')
         self.user4 = self.context.get('user3')
