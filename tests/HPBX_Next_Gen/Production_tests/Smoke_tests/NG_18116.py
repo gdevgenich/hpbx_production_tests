@@ -7,9 +7,9 @@ from call_functions.matchers.matchers import smart_compare
 from context import Context
 
 
-class NG_113(StepTestCase):
+class NG_18116(StepTestCase):
     """
-    @name: NG-113
+    @name: NG-18116
     @summary: FMFM_sim_two_internal_users_ext_ext
     @suite: HPBX_Next_Gen.Automation_functional_tests.FMFM_sim.call_from_external_user
     @version: 1
