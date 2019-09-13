@@ -18,11 +18,6 @@ formatters:
 ################################################################################
 
 handlers:
-    file:
-        class : logging.FileHandler
-        formatter: simpleFormater
-        level: DEBUG
-        filename: debug.log
 
     file_reactor:
         class : logging.FileHandler
@@ -257,15 +252,10 @@ loggers:
         handlers: [file_rmqclient]
         propagate: 0
 
-    context:
-        level: DEBUG
-        handlers: [file]
-        propagate: 0
-
 ################################################################################
 ### ROOT
 ################################################################################
 
 root:
     level: DEBUG
-    handlers: [file]
+    handlers: []
