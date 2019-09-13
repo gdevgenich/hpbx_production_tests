@@ -31,7 +31,7 @@ class NG_18116(StepTestCase):
 
         self.order = [[0], [1, 2]]
 
-        self.timeouts = [10, 6, 2]
+        self.timeouts = [20, 6, 2]
 
     def initialize(self, sm):
         # build execute info
