@@ -23,8 +23,6 @@ class NG_18115(StepTestCase):
         self.user3 = self.context.get('user3')
 
         self.pg1 = self.context.get('pg1')
-        self.pg1.add_member_to_pg(self.user2)
-        self.pg1.add_member_to_pg(self.user3)
 
     def initialize(self, sm):
 

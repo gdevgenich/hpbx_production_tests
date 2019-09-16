@@ -81,6 +81,10 @@ class check_callee(PBXTestSuite):
         mm.upload(name='gcrb_197_313', purpose='GCRB', path=gcrb_file)
         mm.upload(name='gcre_127_617', purpose='GCRE', path=gcre_file)
 
+        self.pg1 = self.context.get('pg1')
+        self.pg1.add_member_to_pg(self.user2)
+        self.pg1.add_member_to_pg(self.user3)
+
     def tearDownSuite(self):
         self.user1.get_account().unassign_all_phone_numbers()
 
