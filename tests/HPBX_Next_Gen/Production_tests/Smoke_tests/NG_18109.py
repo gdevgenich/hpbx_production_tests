@@ -38,15 +38,16 @@ class NG_18109(StepTestCase):
         SimpleCall(**execute_info)
 
         # check call recording
-        check_call_gcrb = CheckIncomingSound([self.user1.get_sipre_client(), self.user2.get_sipre_client()],
-                                             self.gcrb_freqs, duration=10.0)
+        # check_call_gcrb = CheckIncomingSound([self.user1.get_sipre_client(), self.user2.get_sipre_client()],
+        #                                     self.gcrb_freqs, duration=10.0)
         check_call_audio = TwoWayCheckAudio(self.user1.get_sipre_client(), self.user2.get_sipre_client(),
                                             custom_freqs=self.freqs)
         check_cr = CheckCR(cr_data=self.user1.get_last_call_recording_info,
                            cr_file=self.user1.download_last_call_recording, recipient=None,
                            freqs=self.freqs, duration=24, duration_range=3)
 
-        check_call_gcrb.add_substeps_to_step(sm.find_step("Check devices are connected"))
+        sm.find_step("Check devices are connected").add_substep("Skip GSRB cheking", duration=10)
+        # check_call_gcrb.add_substeps_to_step(sm.find_step("Check devices are connected"))
         check_call_audio.add_substeps_to_step(sm.find_step("Check devices are connected"))
         sm.add_step("Wait for recording", duration=5.0)
         check_cr.add_substeps_to_step(sm.add_step("Check CR"))
