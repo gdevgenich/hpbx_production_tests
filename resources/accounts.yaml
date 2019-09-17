@@ -28,16 +28,16 @@
     ng: True
 
 
-"production-ish":
-    name: "production-ish"
+"external":
+    name: "external"
     readonly: True
-    server: "64.78.52.88"
+    server: "72.53.173.5"
     users:
-      - extension: "227"
+      - extension: "113"
         display_name: "DANBURY      CT"
-        phone_number: "12014509511"
+        phone_number: "16504253736"
         devices:
-          - name: "user17"
-            device_id: "82164235"
-            pwd: "F7OSBoW5"
+          - name: "smoke_test"
+            device_id: "53039496"
+            pwd: "MvXPDAjS"
     ips_domain: ""
