@@ -1,11 +1,5 @@
-"mock":
-    ng: False
-    accounts: "./resources/accounts.yaml"
-    main_acc: "ca1-001"
-    external_acc: "external"
-
 "hpbx026":
     ng: False
-    accounts: "./resources/accounts.yaml"
+    accounts: "/opt/smoke_production/accounts.yaml
     main_acc: "hpbx026"
     external_acc: "external"
