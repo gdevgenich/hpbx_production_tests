@@ -10,6 +10,12 @@
     main_acc: "hpbx4"
     external_acc: "external"
 
+"hpbx2":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx2"
+    external_acc: "external"
+
 "hpbx5":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
