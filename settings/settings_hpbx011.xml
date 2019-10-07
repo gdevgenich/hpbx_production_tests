@@ -59,7 +59,7 @@
     <!-- Context reader plugin -->
     <plugin id="ContextReaderPlugun" class="pbxut_util.plugin.context.ContextReaderPlugin">
       <param name="is_debug" value="Yes"/>
-      <param name="test_profile" value="hpbx11"/>
+      <param name="test_profile" value="hpbx011"/>
     </plugin>
 
   </plugins>
