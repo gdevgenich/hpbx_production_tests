@@ -21,6 +21,10 @@ class NG_18115(StepTestCase):
         self.user1 = self.context.get('user1')
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
+        self.cf = self.context.get("client_factory")
+        self.user1.acquire_sip_client(self.cf)
+        self.user2.acquire_sip_client(self.cf)
+        self.user3.acquire_sip_client(self.cf)
 
         self.pg1 = self.context.get('pg1')
 
@@ -48,4 +52,6 @@ class NG_18115(StepTestCase):
         sm.add_step("Check call history").add_expected(self.user1.get_account().check_call_history, calls=[call_1, call_2])
 
     def tearDown(self):
-        pass
+        self.user1.release_client()
+        self.user2.release_client()
+        self.user3.release_client()

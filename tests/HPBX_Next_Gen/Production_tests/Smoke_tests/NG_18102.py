@@ -17,6 +17,10 @@ class NG_18102(StepTestCase):
         self.user1 = self.context.get("user1")
         self.user2 = self.context.get("user2")
         self.user3 = self.context.get("user3")
+        self.cf = self.context.get("client_factory")
+        self.user1.acquire_sip_client(self.cf)
+        self.user2.acquire_sip_client(self.cf)
+        self.user3.acquire_sip_client(self.cf)
         self.vmg1 = self.context.get("vmg1")
         # remove all voicemails
         self.user2.delete_all_voicemails()
@@ -85,6 +89,8 @@ class NG_18102(StepTestCase):
         )
 
     def tearDown(self):
-        pass
+        self.user1.release_client()
+        self.user2.release_client()
+        self.user3.release_client()
         #self.user2.disable_vm_transcript()
         #self.user3.disable_vm_transcript()

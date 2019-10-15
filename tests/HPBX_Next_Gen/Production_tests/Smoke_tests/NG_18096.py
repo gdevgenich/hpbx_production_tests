@@ -20,6 +20,9 @@ class NG_18096(PBXTestCase):
         self.context = Context.instance()
         self.user1 = self.context.get('user1')
         self.user2 = self.context.get('user2')
+        self.cf = self.context.get("client_factory")
+        self.user1.acquire_sip_client(self.cf)
+        self.user2.acquire_sip_client(self.cf)
         self.blf_line2 = self.context.get('blf_line2')
 
 
@@ -47,4 +50,5 @@ class NG_18096(PBXTestCase):
         self.assertFalse(scenario.sm.has_warnings(), scenario.sm.get_warnings())
 
     def tearDown(self):
-        pass
+        self.user1.release_client()
+        self.user2.release_client()
