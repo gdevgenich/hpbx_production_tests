@@ -46,6 +46,7 @@ class NG_18097(StepTestCase):
         scenario = SimpleCallDTMF(**execute_info)
 
         scenario.sm.remove_step("Alice answer")
+        scenario.sm.remove_step("Wait Alice ringing")
         scenario.sm.add_step_after("Send DTMF 5", "Alice pickup call",
                                    self.user2.get_sipre_client().make_call, 2.0,
                                    dst_uri=str(self.user1.get_sip_uri(pickup_string)))
