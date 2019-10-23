@@ -2,13 +2,13 @@
 
 from __future__ import absolute_import
 
-from pbxut.framework import PBXTestCase
+from step_manager.pbxut import StepTestCase
 from call_functions import SimpleCall
 from call_functions.matchers.matchers import check_blf_state
 from context import Context
 
 
-class NG_18096(PBXTestCase):
+class NG_18096(StepTestCase):
     """
 
     @name: NG-18096
@@ -25,8 +25,7 @@ class NG_18096(PBXTestCase):
         self.user2.acquire_sip_client(self.cf)
         self.blf_line2 = self.context.get('blf_line2')
 
-
-    def runTest(self):
+    def initialize(self, sm):
         # build execute info
 
         execute_info = {
@@ -34,21 +33,20 @@ class NG_18096(PBXTestCase):
             "alice": self.user2.get_sipre_client(),
             "call_to": self.user1.get_sip_uri(self.user2.get_extension()),
             "default_check_audio": False,
+            "sm": sm,
         }
 
-        scenario = SimpleCall(**execute_info)
-        scenario.sm.add_step_after("Checking registration", "Check BLF state before test") \
+        SimpleCall(**execute_info)
+        sm.add_step_after("Checking registration", "Check BLF state before test") \
             .add_expected(check_blf_state, blf_line=self.blf_line2, state="terminated")
-        scenario.sm.add_step_after("Bob make first call", "Check BLF state before answer") \
+        sm.add_step_after("Bob make first call", "Check BLF state before answer") \
             .add_expected(check_blf_state, blf_line=self.blf_line2, state="early")
-        scenario.sm.add_step_after("Check devices are connected", "Check BLF state after answer") \
+        sm.add_step_after("Check devices are connected", "Check BLF state after answer") \
             .add_expected(check_blf_state, blf_line=self.blf_line2, state="confirmed")
-        scenario.sm.add_step_after("Check no active calls left", "Check BLF state after call") \
+        sm.add_step_after("Check no active calls left", "Check BLF state after call") \
             .add_expected(check_blf_state, blf_line=self.blf_line2, state="terminated")
-
-        scenario.run()
-        self.assertFalse(scenario.sm.has_warnings(), scenario.sm.get_warnings())
 
     def tearDown(self):
-        self.user1.release_client()
-        self.user2.release_client()
+        pass
+        # self.user1.release_client()
+        # self.user2.release_client()

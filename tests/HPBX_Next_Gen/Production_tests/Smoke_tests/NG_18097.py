@@ -43,11 +43,11 @@ class NG_18097(StepTestCase):
         }
 
         # run the test
-        scenario = SimpleCallDTMF(**execute_info)
+        SimpleCallDTMF(**execute_info)
 
-        scenario.sm.remove_step("Alice answer")
-        scenario.sm.remove_step("Wait Alice ringing")
-        scenario.sm.add_step_after("Send DTMF 5", "Alice pickup call",
+        sm.remove_step("Alice answer")
+        sm.remove_step("Wait Alice ringing")
+        sm.add_step_after("Send DTMF 5", "Alice pickup call",
                                    self.user2.get_sipre_client().make_call, 2.0,
                                    dst_uri=str(self.user1.get_sip_uri(pickup_string)))
 
@@ -55,10 +55,11 @@ class NG_18097(StepTestCase):
         call_1 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
                   'to': self.user2.get_extension(), 'called_name': self.user2.get_display_name()}
 
-        scenario.sm.add_step("Check call history")\
+        sm.add_step("Check call history")\
             .add_expected(self.user1.get_account().check_call_history, calls=[call_1])
 
     def tearDown(self):
-        self.user1.release_client()
-        self.user2.release_client()
-        self.user3.release_client()
+        pass
+        # self.user1.release_client()
+        # self.user2.release_client()
+        # self.user3.release_client()
