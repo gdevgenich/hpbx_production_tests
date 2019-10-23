@@ -47,6 +47,5 @@ class NG_18096(StepTestCase):
             .add_expected(check_blf_state, blf_line=self.blf_line2, state="terminated")
 
     def tearDown(self):
-        pass
-        # self.user1.release_client()
-        # self.user2.release_client()
+        self.user1.release_client()
+        self.user2.release_client()
