@@ -20,8 +20,8 @@ class NG_18109(StepTestCase):
         self.user1 = self.context.get('user1')
         self.user2 = self.context.get('external_user1')
         self.cf = self.context.get("client_factory")
-        self.user1.acquire_sip_client(self.cf)
-        self.user2.acquire_sip_client(self.cf)
+        # self.user1.acquire_sip_client(self.cf)
+        # self.user2.acquire_sip_client(self.cf)
 
         self.user1.enable_call_recording_always()
         self.user1.enable_cr_warning_tone()
@@ -58,5 +58,5 @@ class NG_18109(StepTestCase):
     def tearDown(self):
         self.user1.disable_call_recording()
         self.user1.get_account().disable_call_recording()
-        self.user1.release_client()
-        self.user2.release_client()
+        # self.user1.release_client()
+        # self.user2.release_client()

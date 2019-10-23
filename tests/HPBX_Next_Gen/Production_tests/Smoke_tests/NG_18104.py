@@ -20,9 +20,9 @@ class NG_18104(StepTestCase):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        self.user1.acquire_sip_client(self.cf)
-        self.user2.acquire_sip_client(self.cf)
-        self.user3.acquire_sip_client(self.cf)
+        # self.user1.acquire_sip_client(self.cf)
+        # self.user2.acquire_sip_client(self.cf)
+        # self.user3.acquire_sip_client(self.cf)
 
         # prepare hunt group
         self.hg1 = self.context.get('hg1')
@@ -90,6 +90,7 @@ class NG_18104(StepTestCase):
             sm.call_method_of_stored_value, key="hgch", method_name="check_conn_immed", should_return=False)
 
     def tearDown(self):
-        self.user1.release_client()
-        self.user2.release_client()
-        self.user3.release_client()
+        pass
+        # self.user1.release_client()
+        # self.user2.release_client()
+        # self.user3.release_client()

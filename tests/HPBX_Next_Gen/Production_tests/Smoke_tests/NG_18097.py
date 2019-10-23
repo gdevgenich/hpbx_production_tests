@@ -58,6 +58,7 @@ class NG_18097(StepTestCase):
             .add_expected(self.user1.get_account().check_call_history, calls=[call_1])
 
     def tearDown(self):
-        self.user1.release_client()
-        self.user2.release_client()
-        self.user3.release_client()
+        pass
+        # self.user1.release_client()
+        # self.user2.release_client()
+        # self.user3.release_client()

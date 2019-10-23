@@ -21,8 +21,8 @@ class NG_18096(StepTestCase):
         self.user1 = self.context.get('user1')
         self.user2 = self.context.get('user2')
         self.cf = self.context.get("client_factory")
-        self.user1.acquire_sip_client(self.cf)
-        self.user2.acquire_sip_client(self.cf)
+        # self.user1.acquire_sip_client(self.cf)
+        # self.user2.acquire_sip_client(self.cf)
         self.blf_line2 = self.context.get('blf_line2')
 
     def initialize(self, sm):
@@ -47,5 +47,6 @@ class NG_18096(StepTestCase):
             .add_expected(check_blf_state, blf_line=self.blf_line2, state="terminated")
 
     def tearDown(self):
-        self.user1.release_client()
-        self.user2.release_client()
+        pass
+        # self.user1.release_client()
+        # self.user2.release_client()

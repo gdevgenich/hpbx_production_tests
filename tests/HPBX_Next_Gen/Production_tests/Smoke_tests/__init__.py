@@ -88,9 +88,9 @@ class check_callee(PBXTestSuite):
     def tearDownSuite(self):
         self.user1.get_account().unassign_all_phone_numbers()
 
-        # self.user1.release_client()
-        # self.user2.release_client()
-        # self.user3.release_client()
-        # self.external_user1.release_client()
+        self.user1.release_client()
+        self.user2.release_client()
+        self.user3.release_client()
+        self.external_user1.release_client()
         self.blf_line2.remove()
         self.blf_line3.remove()
