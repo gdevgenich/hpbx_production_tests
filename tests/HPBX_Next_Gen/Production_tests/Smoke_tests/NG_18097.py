@@ -47,7 +47,7 @@ class NG_18097(StepTestCase):
 
         sm.remove_step("Alice answer")
         sm.remove_step("Wait Alice ringing")
-        sm.add_step_after("Send DTMF 5", "Alice pickup call", self.user2.get_sipre_client().make_call, 2.0,
+        sm.add_step_after("Send DTMF 5", "Alice pickup call", self.user2.get_sipre_client().make_call, duration=5.0,
                           dst_uri=str(self.user1.get_sip_uri(pickup_string)))
 
         # check call history
