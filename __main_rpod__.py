@@ -46,6 +46,7 @@ class TestProgram(object):
         global_context.set("unison_login", admin_login)
         global_context.set("unison_password", admin_password)
         global_context.set("production", True)
+        global_context.set("server_name", name)
         for plugin in file_context.plugins:
             self.__log.debug('Create plugin: plugin_class = {plugin_class!r}'.format(plugin_class=plugin.plugin_class))
             inst = cm.inst_create(inst_name=plugin.plugin_class, args=[], kwargs={"context": file_context})
