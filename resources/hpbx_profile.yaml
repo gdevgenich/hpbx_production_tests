@@ -79,7 +79,7 @@
 "hpbx021":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
-    main_acc: "hpbx020"
+    main_acc: "hpbx021"
     external_acc: "external"
 
 "hpbx022":
