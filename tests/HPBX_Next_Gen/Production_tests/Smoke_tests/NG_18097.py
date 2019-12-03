@@ -38,8 +38,8 @@ class NG_18097(StepTestCase):
             "bob": self.user1.get_sipre_client(),
             "alice": self.user2.get_sipre_client(),
             "call_to": self.user1.get_sip_uri(self.aa1.get_extension()),
-            "dtmf": '5',
-            "sm":sm
+            "dtmf": [("5", 2.0), ("5", 2.0), ("5", 2.0)],
+            "sm": sm
         }
 
         # run the test
