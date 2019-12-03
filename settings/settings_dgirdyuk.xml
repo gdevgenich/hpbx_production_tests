@@ -33,7 +33,7 @@
         <param name="endpoint" value="http://172.16.41.53/testlink/lib/api/xmlrpc/v1/xmlrpc.php"/>
         <param name="apikey" value="ebf58e98ded1ab34171eba632e1f2bc7"/>
         <param name="project" value="HPBX Next Gen"/>
-        <param name="testplan" value="Smoke production"/>
+        <param name="testplan" value="dgirdyuk"/>
         <param name="build" value="hpbx026"/>
     </plugin>
 
@@ -59,7 +59,7 @@
     <!-- Context reader plugin -->
     <plugin id="ContextReaderPlugun" class="pbxut_util.plugin.context.ContextReaderPlugin">
       <param name="is_debug" value="Yes"/>
-      <param name="test_profile" value="hpbx5"/>
+      <param name="test_profile" value="hpbx019"/>
     </plugin>
 
   </plugins>
