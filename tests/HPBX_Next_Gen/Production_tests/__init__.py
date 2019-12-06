@@ -113,7 +113,7 @@ class Automation_functional_tests(PBXTestSuite):
         self.user3 = self.main_account.acquire_user()
         self.user4 = self.main_account.acquire_user()
 
-        self.external_user1 = self.external_account.acquire_user()
+        self.external_user1 = self.external_account.acquire_user_by_display_name(display_name=self.context.get("server_name"))
 
         self.aa1 = self.main_account.acquire_aa()
         self.hg1 = self.main_account.acquire_hg()
