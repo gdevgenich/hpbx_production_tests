@@ -24,9 +24,9 @@ class NG_18097(StepTestCase):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        self.user1.acquire_sip_client(self.cf)
-        self.user2.acquire_sip_client(self.cf)
-        self.user3.acquire_sip_client(self.cf)
+        # self.user1.acquire_sip_client(self.cf)
+        # self.user2.acquire_sip_client(self.cf)
+        # self.user3.acquire_sip_client(self.cf)
         #
         self.aa1 = self.context.get('aa1')
 
