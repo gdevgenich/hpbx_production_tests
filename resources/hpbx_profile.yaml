@@ -2,13 +2,13 @@
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx026"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx4":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx4"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx2":
     ng: True
@@ -26,136 +26,136 @@
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx011"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx012":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx012"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx014":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx014"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx015":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx015"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx016":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx016"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx017":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx017"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx018":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx018"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx019":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx019"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx020":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx020"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx021":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx021"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx022":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx022"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx023":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx023"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx024":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx024"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx025":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx025"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx027":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx027"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx028":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx028"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx029":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx029"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx030":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx030"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx031":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx031"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx033":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx033"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx035":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx035"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx037":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx037"
-    external_acc: "external"
+    external_acc: "external_all"
 
 "hpbx039":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx039"
-    external_acc: "external"
+    external_acc: "external_all"
