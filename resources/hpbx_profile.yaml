@@ -8,7 +8,7 @@
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx4"
-    external_acc: "external_all"
+    external_acc: "external"
 
 "hpbx2":
     ng: True
