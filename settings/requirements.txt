@@ -4,7 +4,7 @@ git+ssh://git@hpbxgit.devintermedia.net/qa/dist/blf_parser.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/call_functions.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/mailbox_functions.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/mailcc.git
-git+ssh://git@hpbxgit.devintermedia.net/qa/dist/mailer.git
+git+ssh://git@hpbxgit.devintermedia.net/qa/dist/msg_util.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/robert2.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/sdplib.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/siplib.git
