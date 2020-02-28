@@ -14,7 +14,7 @@ git+ssh://git@hpbxgit.devintermedia.net/qa/dist/hpbx_base.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/step_manager.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/mwi_parser.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/sipde_client.git
-git+ssh://git@hpbxgit.devintermedia.net/qa/dist/hpbx_dm.git
+git+ssh://git@hpbxgit.devintermedia.net/qa/dist/hpbx_dm.git@6.30
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/unison_cp_client.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/reactor.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/anymeeting_client.git
