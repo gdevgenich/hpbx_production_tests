@@ -148,6 +148,12 @@
     main_acc: "hpbx033"
     external_acc: "external_all"
 
+"hpbx033":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx034"
+    external_acc: "external_all"
+
 "hpbx035":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
