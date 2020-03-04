@@ -34,7 +34,7 @@
         <param name="apikey" value="ebf58e98ded1ab34171eba632e1f2bc7"/>
         <param name="project" value="HPBX Next Gen"/>
         <param name="testplan" value="dgirdyuk"/>
-        <param name="build" value="hpbx022"/>
+        <param name="build" value="hpbx032"/>
     </plugin>
 
     <!-- Mail reporter plugin -->
@@ -45,7 +45,7 @@
 
       <param name="recipients" value="dgirdyuk@intermedia.net" />
 
-      <param name="subject" value="[AUTOTEST] HPBX022 report: {{ case_resolution }}" />
+      <param name="subject" value="[AUTOTEST] HPBX032 report: {{ case_resolution }}" />
       <param name="template" value="resources/message.jinja2" />
 
       <param name="verbose" value="Yes" />
@@ -59,7 +59,7 @@
     <!-- Context reader plugin -->
     <plugin id="ContextReaderPlugun" class="pbxut_util.plugin.context.ContextReaderPlugin">
       <param name="is_debug" value="Yes"/>
-      <param name="test_profile" value="hpbx022"/>
+      <param name="test_profile" value="hpbx032"/>
     </plugin>
 
   </plugins>
