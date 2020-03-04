@@ -49,6 +49,7 @@ class NG_18115(StepTestCase):
         call_2 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
                   'to': self.pg1.get_extension(), 'called_name': self.user3.get_display_name()}
 
+        sm.add_step_before("Check Bob is connected", "Wait", duration=3.0)
         sm.add_step("Check call history").add_expected(self.user1.get_account().check_call_history, calls=[call_1, call_2])
 
     def tearDown(self):
