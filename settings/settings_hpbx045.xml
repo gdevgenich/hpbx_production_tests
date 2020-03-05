@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<pbxut>
+
+  <name>next_gen_tests</name>
+  <version>1.20-SNAPSHOT</version>
+
+  <!-- Plugins -->
+  <plugins>
+
+    <!-- Environment plugin -->
+    <plugin id="EnvPlugin" class="pbxut_util.plugin.env.EnvPlugin">
+    </plugin>
+
+    <!-- Summary reporter plugin -->
+    <plugin id="SummaryCaseReporterPlugin" class="pbxut_util.plugin.statistic.summary_case.SummaryCaseReporterPlugin">
+    </plugin>
+
+    <!-- Statistic under @cover annotation plugin -->
+    <plugin id="CoveragePlugin" class="pbxut_util.plugin.statistic.coverage.CoveragePlugin">
+    </plugin>
+
+    <!-- Color text reporter plugin -->
+    <plugin id="ClassicReporterPlugin" class="pbxut_util.plugin.reporter.classic.ClassicReporterPlugin">
+      <param name="type" value="xterm" />
+    </plugin>
+
+    <!-- xUnit reporter plugin -->
+<!--    <plugin id="xUnitReporterPlugin" class="pbxut_util.plugin.reporter.xunit.XUnitReporterPlugin"> -->
+<!--    </plugin> -->
+
+    <plugin id="TestlinkPlugin" class="pbxut_util.plugin.testlink.TestlinkPlugin">
+        <param name="endpoint" value="http://172.16.41.53/testlink/lib/api/xmlrpc/v1/xmlrpc.php"/>
+        <param name="apikey" value="ebf58e98ded1ab34171eba632e1f2bc7"/>
+        <param name="project" value="HPBX Next Gen"/>
+        <param name="testplan" value="Smoke production"/>
+        <param name="build" value="hpbx045"/>
+    </plugin>
+
+    <!-- Mail reporter plugin -->
+    <plugin id="MailReporterPlugin" class="pbxut_util.plugin.reporter.mail.MailReporterPlugin">
+
+      <param name="host" value="devrelay1-1.devmsoutlookonline.net" />
+      <param name="port" value="25" />
+
+      <param name="recipients" value="dgirdyuk@intermedia.net" />
+
+      <param name="subject" value="[AUTOTEST] HPBX045 report: {{ case_resolution }}" />
+      <param name="template" value="resources/message.jinja2" />
+
+      <param name="verbose" value="Yes" />
+
+    </plugin>
+
+    <!-- Service verbose plugin -->
+    <plugin id="VerboseReporterPlugin" class="pbxut_util.plugin.reporter.verbose.VerboseReporterPlugin">
+    </plugin>
+
+    <!-- Context reader plugin -->
+    <plugin id="ContextReaderPlugun" class="pbxut_util.plugin.context.ContextReaderPlugin">
+      <param name="is_debug" value="Yes"/>
+      <param name="test_profile" value="hpbx045"/>
+    </plugin>
+
+  </plugins>
+
+</pbxut>

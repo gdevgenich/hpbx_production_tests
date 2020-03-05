@@ -172,8 +172,50 @@
     main_acc: "hpbx037"
     external_acc: "external_all"
 
+"hpbx038":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx038"
+    external_acc: "external_all"
+
 "hpbx039":
     ng: True
     accounts: "/opt/smoke_production/accounts.yaml"
     main_acc: "hpbx039"
+    external_acc: "external_all"
+
+"hpbx040":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx040"
+    external_acc: "external_all"
+
+"hpbx041":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx041"
+    external_acc: "external_all"
+
+"hpbx043":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx043"
+    external_acc: "external_all"
+
+"hpbx045":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx045"
+    external_acc: "external_all"
+
+"hpbx047":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx047"
+    external_acc: "external_all"
+
+"hpbx049":
+    ng: True
+    accounts: "/opt/smoke_production/accounts.yaml"
+    main_acc: "hpbx049"
     external_acc: "external_all"
