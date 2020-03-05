@@ -43,7 +43,7 @@
       <param name="host" value="devrelay1-1.devmsoutlookonline.net" />
       <param name="port" value="25" />
 
-      <param name="recipients" value="dgirdyuk@intermedia.net" />
+      <param name="recipients" value="dgirdyuk@intermedia.net, ipetrov@intermedia.net, mruinskaya@intermedia.net, ysergeeva@intermedia.net, areshetnikov@intermedia.net, egaleeva@intermedia.net" />
 
       <param name="subject" value="[AUTOTEST] HPBX047 report: {{ case_resolution }}" />
       <param name="template" value="resources/message.jinja2" />
