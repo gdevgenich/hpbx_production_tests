@@ -22,7 +22,7 @@ class NG_19638(StepTestCase):
 
     def initialize(self, sm):
 
-        sm.add_step("Leave voicemail", action = subprocess.run, args="intermedia-ring -- --realm=64.78.52.88 --user=70756563 --password=123 --phoneNumber=100 --ignoreCertificateErrors")
+        sm.add_step("Leave voicemail", action = subprocess.run, args="intermedia-ring -- --realm=64.78.52.88 --user=70756563 --password=123 --phoneNumber=100 --ignoreCertificateErrors", shell=True)
         sm.add_step("Wait for message", duration=40)
 
         # getting transcript from third-party service takes long time
