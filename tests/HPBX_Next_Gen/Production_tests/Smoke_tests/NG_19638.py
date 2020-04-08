@@ -17,6 +17,7 @@ class NG_19638(StepTestCase):
     def setUp(self):
         self.context = Context.instance()
         self.user1 = self.context.get("user1")
+        self.user2 = self.context.get("user2")
         self.user1.delete_all_voicemails()
 
     def initialize(self, sm):
@@ -29,7 +30,7 @@ class NG_19638(StepTestCase):
 
         check_vm_cp_step = CheckVMCP(
             vm_data=self.user2.get_last_voicemail,
-            vm_transcript=self.user3.download_last_transcript,
+            vm_transcript=self.user2.download_last_transcript,
             sender_number=self.user1.get_extension()
         )
         check_vm_cp_step.add_substeps_to_step(
