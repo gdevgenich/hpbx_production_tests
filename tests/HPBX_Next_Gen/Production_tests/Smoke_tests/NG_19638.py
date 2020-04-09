@@ -37,6 +37,7 @@ class NG_19638(StepTestCase):
 
         check_vm_cp_step = CheckVMCP(
             vm_data=self.user2.get_last_voicemail,
+            freqs=[139, 431],
             sender_number=self.user5.get_extension()
         )
         check_vm_cp_step.add_substeps_to_step(
