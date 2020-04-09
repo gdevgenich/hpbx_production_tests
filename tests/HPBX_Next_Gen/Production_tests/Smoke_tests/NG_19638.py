@@ -29,7 +29,7 @@ class NG_19638(StepTestCase):
                                                                          "--ignoreCertificateErrors".format(server=self.user5.get_account().get_server(),
                                                                                                             device_id=self.device.get_device_id(),
                                                                                                             pwd=self.device.get_pwd(),
-                                                                                                            extension=self.user2.get_extension()), shell=True, duration=5.0)
+                                                                                                            extension="*"+self.user2.get_extension()), shell=True, duration=5.0)
         sm.add_step("Wait for message", duration=40)
 
         # getting transcript from third-party service takes long time
