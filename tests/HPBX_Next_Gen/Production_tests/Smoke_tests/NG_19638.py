@@ -16,13 +16,20 @@ class NG_19638(StepTestCase):
 
     def setUp(self):
         self.context = Context.instance()
-        self.user1 = self.context.get("user1")
+        self.user5 = self.context.get("user5")
         self.user2 = self.context.get("user2")
-        self.user1.delete_all_voicemails()
+        self.device = self.user5.create_device()
+        self.user2.delete_all_voicemails()
 
     def initialize(self, sm):
-        sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 & export DISPLAY=:1 && intermedia-ring -- --realm=64.78.52.88 --user=70756563 --password=123 --phoneNumber=100 --ignoreCertificateErrors", shell=True, duration=5.0)
-        sm.add_step("Leave voicemail", action = subprocess.run, args="", shell=True)
+        sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 & export "
+                                                                         "DISPLAY=:1 && intermedia-ring -- "
+                                                                         "--realm={server} --user={device_id} "
+                                                                         "--password={pwd} --phoneNumber={extension} "
+                                                                         "--ignoreCertificateErrors".format(server=self.user5.get_account().get_server(),
+                                                                                                            device_id=self.device.get_device_id(),
+                                                                                                            pwd=self.device.get_pwd(),
+                                                                                                            extension=self.user2.get_extension()), shell=True, duration=5.0)
         sm.add_step("Wait for message", duration=40)
 
         # getting transcript from third-party service takes long time
