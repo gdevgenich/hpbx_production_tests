@@ -37,8 +37,7 @@ class NG_19638(StepTestCase):
 
         check_vm_cp_step = CheckVMCP(
             vm_data=self.user2.get_last_voicemail,
-            vm_transcript=self.user2.download_last_transcript,
-            sender_number=self.user1.get_extension()
+            sender_number=self.user5.get_extension()
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user2")
