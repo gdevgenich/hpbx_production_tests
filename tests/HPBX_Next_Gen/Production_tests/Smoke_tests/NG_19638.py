@@ -22,8 +22,8 @@ class NG_19638(StepTestCase):
 
     def initialize(self, sm):
         sm.add_step("Import desktop", action=subprocess.run, args="export DISPLAY=:1", shell=True, duration=5.0)
-        sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 &", shell=True, duration=5.0)
-        sm.add_step("Leave voicemail", action = subprocess.run, args="intermedia-ring -- --realm=64.78.52.88 --user=70756563 --password=123 --phoneNumber=100 --ignoreCertificateErrors", shell=True)
+        sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 & && intermedia-ring -- --realm=64.78.52.88 --user=70756563 --password=123 --phoneNumber=100 --ignoreCertificateErrors", shell=True, duration=5.0)
+        sm.add_step("Leave voicemail", action = subprocess.run, args="", shell=True)
         sm.add_step("Wait for message", duration=40)
 
         # getting transcript from third-party service takes long time
