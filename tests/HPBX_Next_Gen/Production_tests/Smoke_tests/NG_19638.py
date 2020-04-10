@@ -18,6 +18,7 @@ class NG_19638(StepTestCase):
         self.context = Context.instance()
         self.user5 = self.context.get("user5")
         self.user2 = self.context.get("user2")
+        self.user2.disable_vm_transcript()
         self.device = self.user5.create_device()
         self.user2.delete_all_voicemails()
 
