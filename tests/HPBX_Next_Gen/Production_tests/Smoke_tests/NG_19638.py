@@ -26,7 +26,7 @@ class NG_19638(StepTestCase):
         sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 & export "
                                                                          "DISPLAY=:1 && intermedia-ring -- "
                                                                          "--realm={server} --user={device_id} "
-                                                                         "--password={pwd} --phoneNumber={extension}".format(server=self.user5.get_account().get_server(),
+                                                                         "--password={pwd} --phoneNumber={extension}".format(server="hpbx2.serverdata.net",
                                                                                                             device_id=self.device.get_device_id(),
                                                                                                             pwd=self.device.get_pwd(),
                                                                                                             extension="*"+self.user2.get_extension()), shell=True, duration=5.0)
