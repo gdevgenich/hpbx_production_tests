@@ -23,10 +23,10 @@ class NG_19638(StepTestCase):
         self.user2.delete_all_voicemails()
 
     def initialize(self, sm):
-        sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 & export "
-                                                                         "DISPLAY=:1 && intermedia-ring -- "
+        sm.add_step("Start virtual desktop", action=subprocess.run, args="Xvfb :1 -screen 1 1024x768x16 >/dev/null 2>&1 "
+                                                                         "& export DISPLAY=:1 && intermedia-ring -- "
                                                                          "--realm={server} --user={device_id} "
-                                                                         "--password={pwd} --phoneNumber={extension}".format(server=self.user5.get_account().get_cluster_addr(),
+                                                                         "--password={pwd} --phoneNumber={extension} >/dev/null 2>&1 ".format(server=self.user5.get_account().get_cluster_addr(),
                                                                                                             device_id=self.device.get_device_id(),
                                                                                                             pwd=self.device.get_pwd(),
                                                                                                             extension="*"+self.user2.get_extension()), shell=True, duration=5.0)
