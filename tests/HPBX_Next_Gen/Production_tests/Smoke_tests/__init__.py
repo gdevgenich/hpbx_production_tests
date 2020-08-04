@@ -39,10 +39,10 @@ class check_callee(PBXTestSuite):
         #
         self.user1.assign_phone_number()
 
-        self.user1.acquire_sip_client(self.cf)
-        self.user2.acquire_sip_client(self.cf)
-        self.user3.acquire_sip_client(self.cf)
-        self.external_user1.acquire_sip_client(self.cf)
+        self.user1.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
+        self.user2.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
+        self.user3.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
+        self.external_user1.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
 
         self.user1.change_timeout(20)
         self.user2.change_timeout(20)

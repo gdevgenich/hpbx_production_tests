@@ -22,9 +22,6 @@ class NG_18111(StepTestCase):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        # self.user1.acquire_sip_client(self.cf)
-        # self.user2.acquire_sip_client(self.cf)
-        # self.user3.acquire_sip_client(self.cf)
 
         self.blf_line3 = self.context.get('blf_line3')
 
@@ -47,7 +44,7 @@ class NG_18111(StepTestCase):
         sm.add_step_after("Checking registration", "Check BLF state before test").add_expected(
             check_blf_state, blf_line=self.blf_line3, state="terminated")
         
-        check_audio_after_unpark = TwoWayCheckAudio(self.user2.get_sipre_client(), self.user3.get_sipre_client())
+        check_audio_after_unpark = TwoWayCheckAudio(self.user2.get_sipre_client(), self.user3.get_sipre_client(), work_dir="/var/tmp/pjlog/")
         sm.add_step("Wait", None, 5.0)
         sm.add_step("Check BLF state before unpark").add_expected(
             check_blf_state, blf_line=self.blf_line3, state="terminated")

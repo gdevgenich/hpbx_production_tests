@@ -24,10 +24,6 @@ class NG_18097(StepTestCase):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        # self.user1.acquire_sip_client(self.cf)
-        # self.user2.acquire_sip_client(self.cf)
-        # self.user3.acquire_sip_client(self.cf)
-        #
         self.aa1 = self.context.get('aa1')
 
     def initialize(self, sm):
@@ -39,7 +35,8 @@ class NG_18097(StepTestCase):
             "alice": self.user2.get_sipre_client(),
             "call_to": self.user1.get_sip_uri(self.aa1.get_extension()),
             "dtmf": [("5", 2.0), ("5", 2.0), ("5", 2.0)],
-            "sm": sm
+            "sm": sm,
+            "work_dir": "/var/tmp/pjlog/"
         }
 
         # run the test

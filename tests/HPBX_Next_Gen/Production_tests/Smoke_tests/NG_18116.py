@@ -22,10 +22,6 @@ class NG_18116(StepTestCase):
         self.user3 = self.context.get('user2')
         self.user4 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        # self.user2.acquire_sip_client(self.cf)
-        # self.user3.acquire_sip_client(self.cf)
-        # self.user4.acquire_sip_client(self.cf)
-        # self.external_user3.acquire_sip_client(self.cf)
         self.user2.remove_all_fmfm()
         self.user2.add_fmfm(number=self.user3.get_extension(), order=50, timeout=10)
         self.user2.add_fmfm(number=self.user4.get_extension(), order=50, timeout=10)
@@ -48,7 +44,8 @@ class NG_18116(StepTestCase):
             "devices": self.devices,
             "order": self.order,
             "timeouts": self.timeouts,
-            "sm": sm
+            "sm": sm,
+            "work_dir": "/var/tmp/pjlog/"
         }
 
         OrderedCall(**execute_info)

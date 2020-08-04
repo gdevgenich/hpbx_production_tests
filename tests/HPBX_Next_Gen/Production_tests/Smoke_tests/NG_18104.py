@@ -20,9 +20,6 @@ class NG_18104(StepTestCase):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        # self.user1.acquire_sip_client(self.cf)
-        # self.user2.acquire_sip_client(self.cf)
-        # self.user3.acquire_sip_client(self.cf)
 
         # prepare hunt group
         self.hg1 = self.context.get('hg1')
@@ -55,7 +52,8 @@ class NG_18104(StepTestCase):
             "devices": self.hg_members,
             "order": self.order,
             "timeouts": self.timeouts,
-            "sm": sm
+            "sm": sm,
+            "work_dir": "/var/tmp/pjlog/",
         }
 
         OrderedCall(**execute_info)

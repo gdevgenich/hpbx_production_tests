@@ -18,9 +18,6 @@ class NG_18102(StepTestCase):
         self.user2 = self.context.get("user2")
         self.user3 = self.context.get("user3")
         self.cf = self.context.get("client_factory")
-        # self.user1.acquire_sip_client(self.cf)
-        # self.user2.acquire_sip_client(self.cf)
-        # self.user3.acquire_sip_client(self.cf)
         self.vmg1 = self.context.get("vmg1")
         # remove all voicemails
         self.user2.delete_all_voicemails()
@@ -48,6 +45,7 @@ class NG_18102(StepTestCase):
             "wav_file": self.vm_audio,
             "message_duration": self.duration,
             "sm": sm,
+            "work_dir": "/var/tmp/pjlog/"
         }
 
         SimpleCallVM(**execute_info)
@@ -61,7 +59,8 @@ class NG_18102(StepTestCase):
             vm_data=self.user2.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
-            sender_number=self.user1.get_extension()
+            sender_number=self.user1.get_extension(),
+            path="/var/tmp/pjlog/"
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user2")
@@ -71,7 +70,8 @@ class NG_18102(StepTestCase):
             vm_data=self.user3.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
-            sender_number=self.user1.get_extension()
+            sender_number=self.user1.get_extension(),
+            path="/var/tmp/pjlog/",
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user3")
@@ -81,7 +81,7 @@ class NG_18102(StepTestCase):
             'from': self.user1.get_extension(),
             'caller_name': self.user1.get_display_name(),
             'to': self.vmg1.extension,
-            'called_name': self.vmg1.display_name
+            'called_name': self.vmg1.display_name,
         }
 
         sm.add_step("Check call history").add_expected(

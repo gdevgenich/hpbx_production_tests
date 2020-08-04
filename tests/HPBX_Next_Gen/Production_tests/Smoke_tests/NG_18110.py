@@ -20,8 +20,6 @@ class NG_18110(StepTestCase):
         self.user1 = self.context.get('external_user1')
         self.user2 = self.context.get('user1')
         self.cf = self.context.get("client_factory")
-        # self.user1.acquire_sip_client(self.cf)
-        # self.user2.acquire_sip_client(self.cf)
 
     def initialize(self, sm):
         # build execute info
@@ -30,7 +28,8 @@ class NG_18110(StepTestCase):
             "alice": self.user2.get_sipre_client(),
             "call_to": self.user1.get_sip_uri(self.user2.get_phone_number()),
             "default_check_audio": True,
-            "sm": sm
+            "sm": sm,
+            "work_dir": "/var/tmp/pjlog/"
         }
         SimpleCall(**execute_info)
 

@@ -18,95 +18,96 @@ formatters:
 ################################################################################
 
 handlers:
-    file:
-        class : logging.FileHandler
-        formatter: simpleFormater
-        level: DEBUG
-        filename: debug.log
 
     file_reactor:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_reactor.log
+        filename: /var/tmp/pjlog/debug_reactor.log
 
     file_blf:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_blf.log
+        filename: /var/tmp/pjlog/debug_blf.log
 
     file_sip:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_sip.log
+        filename: /var/tmp/pjlog/debug_sip.log
 
     file_pbxut_util:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_pbxut_util.log
+        filename: /var/tmp/pjlog/debug_pbxut_util.log
 
     file_pbxut:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_pbxut.log
+        filename: /var/tmp/pjlog/debug_pbxut.log
+
+    file_cp:
+        class : logging.FileHandler
+        formatter: simpleFormater
+        level: DEBUG
+        filename: /var/tmp/pjlog/debug_cp.log
 
     file_testlink:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_testlink.log
+        filename: /var/tmp/pjlog/debug_testlink.log
 
     file_callflow:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_callflow.log
+        filename: /var/tmp/pjlog/debug_callflow.log
 
     file_inspector:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_inspector.log
+        filename: /var/tmp/pjlog/debug_inspector.log
 
     file_hpbxdm:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_hpbxdm.log
+        filename: /var/tmp/pjlog/debug_hpbxdm.log
 
     file_db:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_db.log
+        filename: /var/tmp/pjlog/debug_db.log
 
     file_audio:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_audio.log
+        filename: /var/tmp/pjlog/debug_audio.log
 
     file_mail:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_mail.log
+        filename: /var/tmp/pjlog/debug_mail.log
 
     file_umsctlclient:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_umsctlclient.log
+        filename: /var/tmp/pjlog/debug_umsctlclient.log
 
     file_rmqclient:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: debug_rmqclient.log
+        filename: /var/tmp/pjlog/debug_rmqclient.log
 
 
 ################################################################################
@@ -186,6 +187,11 @@ loggers:
       handlers: [file_callflow]
       propagate: 0
 
+    unison_cp_client:
+        level: DEBUG
+        handlers: [file_cp]
+        propagate: 0
+
     hpbx_dm:
         level: DEBUG
         handlers: [file_hpbxdm]
@@ -246,15 +252,10 @@ loggers:
         handlers: [file_rmqclient]
         propagate: 0
 
-    context:
-        level: DEBUG
-        handlers: [file]
-        propagate: 0
-
 ################################################################################
 ### ROOT
 ################################################################################
 
 root:
     level: DEBUG
-    handlers: [file]
+    handlers: []

@@ -29,7 +29,7 @@ class Automation_functional_tests(PBXTestSuite):
 
         # Step 2. Loading profile
         # read profiles
-        with open("./resources/hpbx_profile.yaml") as stream:
+        with open("/opt/smoke_production/resources/hpbx_profile.yaml") as stream:
                 content = stream.read()
         res = loads(content)
         #
@@ -41,7 +41,6 @@ class Automation_functional_tests(PBXTestSuite):
         accounts = res.get(name="accounts", section=profile)
         main_acc = res.get(name="main_acc", section=profile)
         external_acc = res.get(name="external_acc", section=profile)
-
         self.ng = res.get(name="ng", section=profile)
         self.context.set("ng", self.ng)
 
@@ -138,10 +137,10 @@ class Automation_functional_tests(PBXTestSuite):
         self.user1.account.enable_vm_transcript()
 
         # Test data
-        with open("./resources/vm_transcript.txt") as f:
+        with open("/opt/smoke_production/resources/vm_transcript.txt") as f:
             transcript = f.read()
         self.context.set("vm_transcript1", transcript)
-        self.context.set("vm_audio_path1", "./resources/vm_audio.wav")
+        self.context.set("vm_audio_path1", "/opt/smoke_production/resources/vm_audio.wav")
 
         if self.ng:
             stdout.write("External users CNAM:\n")
@@ -154,8 +153,8 @@ class Automation_functional_tests(PBXTestSuite):
         :param local_user: local user in organisation with a phone number assigned
         """
         local_user.assign_phone_number()
-        local_user.acquire_sip_client(self.client_factory)
-        external_user.acquire_sip_client(self.client_factory)
+        local_user.acquire_sip_client(self.client_factory, path="/var/tmp/pjlog")
+        external_user.acquire_sip_client(self.client_factory, path="/var/tmp/pjlog")
 
         sm = StepManager()
         execute_info = {
@@ -163,7 +162,8 @@ class Automation_functional_tests(PBXTestSuite):
             "alice": local_user.get_sipre_client(),
             "call_to": external_user.get_sip_uri(local_user.get_phone_number()),
             "default_check_audio": False,
-            "sm": sm
+            "sm": sm,
+            "work_dir": "/var/tmp/pjlog/"
         }
         SimpleCall(**execute_info)
         sm.add_substep(

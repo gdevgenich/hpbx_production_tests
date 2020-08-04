@@ -10,7 +10,7 @@ from step_manager.pbxut import StepTestCase
 
 class NG_18115(StepTestCase):
     """
-    @name: NG_18115
+    @name: NG-18115
     @summary: Paging call with answer
     @suite: HPBX_Next_Gen.Automation_functional_tests.Paging
     """
@@ -22,9 +22,6 @@ class NG_18115(StepTestCase):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.cf = self.context.get("client_factory")
-        # self.user1.acquire_sip_client(self.cf)
-        # self.user2.acquire_sip_client(self.cf)
-        # self.user3.acquire_sip_client(self.cf)
 
         self.pg1 = self.context.get('pg1')
 
@@ -39,6 +36,7 @@ class NG_18115(StepTestCase):
             "default_check_audio": True,
             "convert_to_call": self.user1.get_account().get_page_to_twowaycall_action(),
             "sm": sm,
+            "work_dir": "/var/tmp/pjlog/"
         }
 
         PagingCall(**execute_info)
@@ -52,6 +50,3 @@ class NG_18115(StepTestCase):
 
     def tearDown(self):
         pass
-        # self.user1.release_client()
-        # self.user2.release_client()
-        # self.user3.release_client()
