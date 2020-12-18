@@ -57,6 +57,3 @@ class NG_18097(StepTestCase):
 
     def tearDown(self):
         pass
-        # self.user1.release_client()
-        # self.user2.release_client()
-        # self.user3.release_client()

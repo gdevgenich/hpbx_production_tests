@@ -3,7 +3,6 @@ from __future__ import absolute_import
 
 from step_manager.pbxut import StepTestCase
 from call_functions import OrderedCall
-from call_functions.matchers.matchers import smart_compare
 from context import Context
 
 
@@ -44,22 +43,12 @@ class NG_18116(StepTestCase):
             "devices": self.devices,
             "order": self.order,
             "timeouts": self.timeouts,
+            "default_check_audio": False,
             "sm": sm,
             "work_dir": "/var/tmp/pjlog/"
         }
 
         OrderedCall(**execute_info)
 
-        # check call history
-        call_1 = {'from': self.external_user3.get_phone_number(), 'caller_name': self.external_user3.get_cnam(),
-                  'to': self.user2.get_phone_number(), 'called_name': self.user2.get_display_name()}
-
-        #sm.add_step("Check call history").add_expected(
-        #     self.user2.get_account().check_call_history, calls=[call_1])
-
     def tearDown(self):
         self.user2.remove_all_fmfm()
-        # self.user2.release_client()
-        # self.user3.release_client()
-        # self.user4.release_client()
-        # self.external_user3.release_client()

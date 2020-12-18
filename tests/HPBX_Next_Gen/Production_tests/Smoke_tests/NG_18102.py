@@ -35,6 +35,7 @@ class NG_18102(StepTestCase):
         self.vm_audio = self.context.get("vm_audio_path1")
         self.transcript = self.context.get("vm_transcript1")
         self.duration = 12
+        self.user1.get_account().disable_call_recording()
 
     def initialize(self, sm):
 
@@ -45,7 +46,6 @@ class NG_18102(StepTestCase):
             "wav_file": self.vm_audio,
             "message_duration": self.duration,
             "sm": sm,
-            "work_dir": "/var/tmp/pjlog/"
         }
 
         SimpleCallVM(**execute_info)
@@ -59,8 +59,7 @@ class NG_18102(StepTestCase):
             vm_data=self.user2.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
-            sender_number=self.user1.get_extension(),
-            path="/var/tmp/pjlog/"
+            sender_number=self.user1.get_extension()
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user2")
@@ -70,8 +69,7 @@ class NG_18102(StepTestCase):
             vm_data=self.user3.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
-            sender_number=self.user1.get_extension(),
-            path="/var/tmp/pjlog/",
+            sender_number=self.user1.get_extension()
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user3")
@@ -81,7 +79,7 @@ class NG_18102(StepTestCase):
             'from': self.user1.get_extension(),
             'caller_name': self.user1.get_display_name(),
             'to': self.vmg1.extension,
-            'called_name': self.vmg1.display_name,
+            'called_name': self.vmg1.display_name
         }
 
         sm.add_step("Check call history").add_expected(
@@ -90,8 +88,3 @@ class NG_18102(StepTestCase):
 
     def tearDown(self):
         pass
-        # self.user1.release_client()
-        # self.user2.release_client()
-        # self.user3.release_client()
-        #self.user2.disable_vm_transcript()
-        #self.user3.disable_vm_transcript()

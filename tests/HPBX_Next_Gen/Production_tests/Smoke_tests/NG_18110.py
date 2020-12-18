@@ -2,7 +2,7 @@
 
 from __future__ import absolute_import
 
-from call_functions import SimpleCall, CheckIncomingSound, TwoWayCheckAudio, CheckCR, CheckEMail
+from call_functions import SimpleCall
 from context import Context
 from step_manager.pbxut import StepTestCase
 
@@ -35,5 +35,3 @@ class NG_18110(StepTestCase):
 
     def tearDown(self):
         pass
-        # self.user1.release_client()
-        # self.user2.release_client()
