@@ -137,9 +137,9 @@ class Automation_functional_tests(PBXTestSuite):
         self.user1.account.enable_vm_transcript()
 
         # Test data
-        with open("/opt/smoke_production/resources/vm_transcript.txt") as f:
-            transcript = f.read()
-        self.context.set("vm_transcript1", transcript)
+        with open("./resources/vm_transcript.txt") as f:
+            transcript_list = f.read().split(', ')
+        self.context.set("vm_transcript1", transcript_list)
         self.context.set("vm_audio_path1", "/opt/smoke_production/resources/vm_audio.wav")
 
         if self.ng:
