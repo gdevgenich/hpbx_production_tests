@@ -50,10 +50,12 @@ class NG_18097(StepTestCase):
         # check call history
         call_1 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
                   'to': self.user2.get_extension(), 'called_name': self.user2.get_display_name()}
+        call_2 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
+                  'to': self.aa1.get_extension(), 'called_name': "Auto attendant"}
 
         sm.add_step("wait", duration=8.0)
         sm.add_step("Check call history")\
-            .add_expected(self.user1.get_account().check_call_history, calls=[call_1])
+            .add_expected(self.user1.get_account().check_call_history, calls=[call_1, call_2])
 
     def tearDown(self):
         pass
