@@ -8,10 +8,6 @@
   <!-- Plugins -->
   <plugins>
 
-    <!-- Service version plugin -->
-    <plugin id="VersionPlugin" class="pbxut_util.plugin.version.VersionPlugin">
-    </plugin>
-
         <!-- Service verbose plugin -->
     <plugin id="VerboseReporterPlugin" class="pbxut_util.plugin.reporter.verbose.VerboseReporterPlugin">
     </plugin>

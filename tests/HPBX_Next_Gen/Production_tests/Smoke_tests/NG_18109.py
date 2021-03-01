@@ -52,4 +52,3 @@ class NG_18109(StepTestCase):
 
     def tearDown(self):
         self.user1.disable_call_recording()
-        self.user1.get_account().disable_call_recording()

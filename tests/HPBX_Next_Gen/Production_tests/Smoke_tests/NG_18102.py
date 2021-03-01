@@ -35,7 +35,6 @@ class NG_18102(StepTestCase):
         self.vm_audio = self.context.get("vm_audio_path1")
         self.transcript = self.context.get("vm_transcript1")
         self.duration = 12
-        self.user1.get_account().disable_call_recording()
 
     def initialize(self, sm):
 
