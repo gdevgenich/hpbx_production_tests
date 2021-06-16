@@ -44,3 +44,11 @@ git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pynetwork.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/ips_client.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/ips_control.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/soap_client.git
+
+
+# ffmpeg
+# libpjproject
+# bcg729
+# sipde
+# sipmon
+# nodejs=12.20.1-1nodesource1
