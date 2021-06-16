@@ -1,0 +1,28 @@
+"hpbx2":
+    name: "auto-test02"
+    hp_id: "1671369"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "199.193.202.81"
+    cluster_addr: "hpbx2.serverdata.net"
+    phone_numbers:
+        - "14083296051"
+    al_leid: "1247303"
+    extension_length: 3
+    db_access: False
+    ng: True
+
+"external_all":
+    name: "external"
+    readonly: True
+    server: "72.53.172.4"
+    users:
+      - extension: "111"
+        display_name: "hpbx2"
+        phone_number: "16504183242"
+        devices:
+          - name: "smoke_test_hpbx2"
+            device_id: "18996640"
+            pwd: "DOgRSYJJ"
+    ips_domain: ""

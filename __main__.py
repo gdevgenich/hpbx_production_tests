@@ -36,8 +36,8 @@ class TestProgram(object):
         cr = ContextReader()
         name = argv[1]
         config_name = "./settings/settings_{name}.xml".format(name=name)
-        admin_login = argv[2]
-        admin_password = argv[3]
+        admin_login = "dgirdyuk@wh.intermedia.net"
+        admin_password = "1987GDEvgen1ch!!"
 
         file_context = cr.read(config_name)
 
@@ -67,7 +67,7 @@ class TestProgram(object):
         """
 
         # Step 1. Prepare logging system
-        prepare_logging_system(name="./resources/logging.yaml")
+        prepare_logging_system(name="./logging.yaml")
 
         # Create test runner (test run iterator)
         runner = PBXTestRunner(loader=DirectoryTestLoader(), failfast=False)

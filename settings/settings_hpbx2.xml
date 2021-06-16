@@ -8,35 +8,37 @@
   <!-- Plugins -->
   <plugins>
 
-        <!-- Service verbose plugin -->
-    <plugin id="VerboseReporterPlugin" class="pbxut_util.plugin.reporter.verbose.VerboseReporterPlugin">
-    </plugin>
-
     <!-- Service case counter plugin -->
-    <plugin id="SummaryCaseReporterPlugin" class="pbxut_util.plugin.statistic.summary_case.SummaryCaseReporterPlugin">
+    <plugin id="SummaryCaseReporterPlugin" class="pbxut_plugin.summary_case.SummaryCaseReporterPlugin">
     </plugin>
 
-    <!-- Service alert message counter -->
-    <plugin id="AlertCaseReporterPlugin" class="pbxut_util.plugin.reporter.alert_case.AlertCaseReporterPlugin">
-    </plugin>
-
-        <!-- Reporter: Logging -->
-    <plugin id="LogPlugin" class="pbxut_util.plugin.log.LogPlugin">
-    </plugin>
-
-    <plugin id="SimpleFilterPlugin" class="pbxut_util.plugin.filter.simple.SimpleFilterPlugin">
+    <plugin id="SimpleFilterPlugin" class="pbxut_plugin.simple_filter.SimpleFilterPlugin">
         <param name="filename" value="plan.txt" />
     </plugin>
 
     <!-- Context reader plugin -->
-    <plugin id="ContextReaderPlugun" class="pbxut_util.plugin.context.ContextReaderPlugin">
+    <plugin id="ContextPlugun" class="pbxut_plugin.context.ContextPlugin">
       <param name="is_debug" value="Yes"/>
       <param name="test_profile" value="hpbx2"/>
     </plugin>
 
     <!-- Color text reporter plugin -->
-    <plugin id="ClassicReporterPlugin" class="pbxut_util.plugin.reporter.classic.ClassicReporterPlugin">
+    <plugin id="ClassicReporterPlugin" class="pbxut_plugin.classic_reporter.ClassicReporterPlugin">
         <param name="type" value="xterm" />
+    </plugin>
+
+    <!-- Service verbose plugin -->
+    <plugin id="VerboseReporterPlugin" class="pbxut_plugin.verbose_reporter.VerboseReporterPlugin">
+    </plugin>
+
+    <!-- Mail reporter plugin -->
+    <plugin id="MailReporterPlugin" class="pbxut_plugin.mail_reporter.MailReporterPlugin">
+       <param name="host" value="127.0.0.1" />
+       <param name="port" value="25" />
+       <param name="recipients" value="dgirdyuk@intermedia.net, ipetrov@intermedia.net, VoiceAppDevOPSTeam@intermedia.net" />
+       <param name="subject" value="[AUTOTEST] HPBX2 report: {{ case_resolution }}" />
+       <param name="template" value="resources/message.jinja2" />
+       <param name="verbose" value="Yes" />
     </plugin>
 
   </plugins>
