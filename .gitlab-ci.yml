@@ -18,7 +18,7 @@ variables:
   DEB_GROUP: root
 
 
-ips-smoke-tests:build:
+hpbx-smoke-tests:build:
   image: debian:9
   stage: build
   tags: [hpbx]
@@ -32,7 +32,7 @@ ips-smoke-tests:build:
     paths:
       - "*deb" 
 
-ips-smoke-tests:aptrepo:
+hpbx-smoke-tests:aptrepo:
   image: debian:9
   stage: aptrepo
   variables:
