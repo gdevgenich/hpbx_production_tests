@@ -18,7 +18,6 @@ git+ssh://git@hpbxgit.devintermedia.net/qa/dist/hpbx_dm.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/unison_cp_client.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/reactor.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/anymeeting_client.git
-
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pbxut.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pbxut_util.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/context.git
@@ -33,22 +32,11 @@ git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pbxut_plugin_classic_reporter.gi
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pbxut_plugin_simple_filter.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pbxut_plugin_context_reader.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pbxut_plugin_context.git
-
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/log_functions.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/rpclient.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/umsctl_client.git
-
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/configparser2.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/pynetwork.git
-
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/ips_client.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/ips_control.git
 git+ssh://git@hpbxgit.devintermedia.net/qa/dist/soap_client.git
-
-
-# ffmpeg
-# libpjproject
-# bcg729
-# sipde
-# sipmon
-# nodejs=12.20.1-1nodesource1
