@@ -5,7 +5,7 @@ set -x
 
 DEB_USER="jenkins"
 DEB_GROUP="jenkins"
-DEB_DATA="resources settings tests __main__.py plan.txt"
+DEB_DATA="resources settings tests __main__.py plan.txt logging.yaml"
 DEB_DIRECTORY="opt/smoke_production"
 DEB_PACKAGE_NAME="hpbx-smoke-tests"
 DEB_PACKAGE_VERSION="$(cat version)"
