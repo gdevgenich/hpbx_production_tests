@@ -48,8 +48,7 @@ DEB_PYTHON_LIBS_DEPENDENSIES=$(awk -F '/' '!/^$/ {print $NF}' settings/requireme
 DEB_COMMON_DEPENDENSIES_PKG_NAMES="python3 ffmpeg libpjproject bcg729 sipde sipmon"
 DEB_COMMON_DEPENDENSIES=$(for i in $DEB_COMMON_DEPENDENSIES_PKG_NAMES;do echo -n " --depends $i"; done)
 
-CONFIG_FILES="--config-files $DEB_DIRECTORY/settings 
---config-files $DEB_DIRECTORY/logging.yaml"
+CONFIG_FILES="--config-files $DEB_DIRECTORY/logging.yaml"
 
 fpm   --name "$DEB_PACKAGE_NAME" \
       --version "$DEB_BUILD_NUMBER" \
