@@ -64,4 +64,4 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --description "HPBX smoke test" \
       --deb-no-default-config-files \
       ${CONFIG_FILES} \
-      -t deb -s dir opt/=/opt var/tmp/pjlog=/var/tmp/pjlog 
+      -t deb -s dir opt/=/opt var/tmp/pjlog=/var/tmp/
