@@ -45,7 +45,7 @@ done
 DEB_PYTHON_LIBS_DEPENDENSIES=$(awk -F '/' '!/^$/ {print $NF}' settings/requirements.txt | sed 's|.git||g;s|_|-|g'|while read l;do echo -n " --depends python3-${l}";done)
 
 # extra dependencies
-DEB_COMMON_DEPENDENSIES_PKG_NAMES="python3 ffmpeg libpjproject bcg729 sipde sipmon"
+DEB_COMMON_DEPENDENSIES_PKG_NAMES="python3 ffmpeg libpjproject bcg729 sipde sipmon xvfb libxss1 xdg-utils libasound2 intermedia-ring"
 DEB_COMMON_DEPENDENSIES=$(for i in $DEB_COMMON_DEPENDENSIES_PKG_NAMES;do echo -n " --depends $i"; done)
 
 CONFIG_FILES="--config-files $DEB_DIRECTORY/logging.yaml"
