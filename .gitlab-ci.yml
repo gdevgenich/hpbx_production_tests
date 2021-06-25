@@ -1,0 +1,44 @@
+image: debian:10
+stages:
+  - build
+  - aptrepo
+
+variables:
+  DISTR: buster
+  APT_LOCAL_REPO: imedia-hpbx-testing-buster
+  APT_REPO: imedia-hpbx-testing
+  APT_DIR: imedia-hpbx-testing-buster
+  PACKAGE_NAME: hpbx-smoke-tests
+  PACKAGE_VERSION: 1.1.0
+  PACKAGE_DESC: HPBX production smoke tests
+  DEB_OS_PREFIX: deb10
+  DEB_ARCH: amd64
+  DEVEMAIL: dgirdyuk@intermedia.net
+  DEB_USER: root
+  DEB_GROUP: root
+
+
+hpbx-smoke-tests:build:
+  image: debian:9
+  stage: build
+  tags: [hpbx]
+  script:
+    - apt-get update
+    - apt-get install git curl gnupg2 ruby ruby-dev rubygems build-essential -y
+    - gem install --no-ri --no-rdoc fpm -v 1.11.0
+    - ./makeall.sh
+  artifacts:
+    expire_in: 1 days
+    paths:
+      - "*deb" 
+
+hpbx-smoke-tests:aptrepo:
+  image: debian:9
+  stage: aptrepo
+  variables:
+    DEB_DIR: opt/smoke_production
+  tags: [hpbx]
+  script:
+    - apt-get update
+    - apt-get install curl -y
+    - ./pushdeb.sh
