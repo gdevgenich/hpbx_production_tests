@@ -41,16 +41,6 @@ ls|grep "${DEB_ARCH}.deb"|while read l
   rm $l;
 done
 
-# read dependencies from file resource/requirements.txt
-DEB_PYTHON_LIBS_DEPENDENSIES=()
-#DEB_PYTHON_LIBS_DEPENDENSIES+=($(awk -F '/' '!/^$/ {print $NF}' settings/requirements1.txt | sed 's|.git||g;s|_|-|g'|while read l;do echo -n " --depends 'python3-${l}'";done))
-DEB_PYTHON_LIBS_DEPENDENSIES+=($(while IFS= read -r line; do printf " --depends %s" "'python3-${line}'";done < settings/requirements1.txt ))
-
-
-# extra dependencies
-DEB_COMMON_DEPENDENSIES_PKG_NAMES="python3 ffmpeg libpjproject bcg729 sipde sipmon xvfb libxss1 xdg-utils libasound2 intermedia-ring"
-DEB_COMMON_DEPENDENSIES=$(for i in $DEB_COMMON_DEPENDENSIES_PKG_NAMES;do echo -n " --depends $i"; done)
-
 CONFIG_FILES="--config-files $DEB_DIRECTORY/logging.yaml"
 
 fpm   --name "$DEB_PACKAGE_NAME" \
