@@ -44,6 +44,9 @@ done
 # read dependencies from file resource/requirements.txt
 DEB_PYTHON_LIBS_DEPENDENSIES=$(awk -F '/' '!/^$/ {print $NF}' settings/requirements.txt | sed 's|.git||g;s|_|-|g'|while read l;do echo -n " --depends python3-${l}";done)
 
+DEB_PYTHON_LIBS_DEPENDENSIES=( --depends 'base_callfunc = 1.2' --depends 'audio_functions = 2.1' )
+
+
 # extra dependencies
 DEB_COMMON_DEPENDENSIES_PKG_NAMES="python3 ffmpeg libpjproject bcg729 sipde sipmon xvfb libxss1 xdg-utils libasound2 intermedia-ring"
 DEB_COMMON_DEPENDENSIES=$(for i in $DEB_COMMON_DEPENDENSIES_PKG_NAMES;do echo -n " --depends $i"; done)
@@ -54,6 +57,10 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --version "$DEB_BUILD_NUMBER" \
       --architecture "${DEB_ARCH}" \
       --maintainer "${DEB_DEVEMAIL}" \
+      ${DEB_COMMON_DEPENDENSIES} \
+      ${DEB_PYTHON_LIBS_DEPENDENSIES} \
+      --depends 'python3-hpbx-dm = 7.33' \
+      --depends 'nodejs = 12.20.1-1nodesource1' \
       --deb-user $DEB_USER \
       --deb-group $DEB_GROUP \
       --description "${DEB_PACKAGE_DESC}" \
