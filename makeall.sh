@@ -58,7 +58,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --architecture "${DEB_ARCH}" \
       --maintainer "${DEB_DEVEMAIL}" \
       ${DEB_COMMON_DEPENDENSIES} \
-      ${DEB_PYTHON_LIBS_DEPENDENSIES} \
+      "${DEB_PYTHON_LIBS_DEPENDENSIES[@]}" \
       --depends 'python3-hpbx-dm = 7.33' \
       --depends 'nodejs = 12.20.1-1nodesource1' \
       --deb-user $DEB_USER \
