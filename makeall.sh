@@ -44,7 +44,7 @@ done
 # read dependencies from file resource/requirements.txt
 DEB_PYTHON_LIBS_DEPENDENSIES=()
 #DEB_PYTHON_LIBS_DEPENDENSIES+=($(awk -F '/' '!/^$/ {print $NF}' settings/requirements1.txt | sed 's|.git||g;s|_|-|g'|while read l;do echo -n " --depends 'python3-${l}'";done))
-DEB_PYTHON_LIBS_DEPENDENSIES+=($(while IFS= read -r line; do echo -n " --depends 'python3-${line}'";done < settings/requirements1.txt ))
+DEB_PYTHON_LIBS_DEPENDENSIES+=($(while IFS= read -r line; do printf " --depends %s" "'python3-${line}'";done < settings/requirements1.txt ))
 
 
 # extra dependencies
