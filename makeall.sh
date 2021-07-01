@@ -96,6 +96,9 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'sipde = 1.2.3' \
       --depends 'sipmon = 2.4.14' \
       --depends 'nodejs = 12.20.1-1nodesource1' \
+      --depends 'python3-protobuf = 3.17.3' \
+      --depends 'ffmpeg' \
+      --depends 'intermedia-ring = 0.0.2' \
       --deb-user $DEB_USER \
       --deb-group $DEB_GROUP \
       --description "${DEB_PACKAGE_DESC}" \
