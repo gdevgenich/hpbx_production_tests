@@ -75,7 +75,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-pbxut-plugin-summary-case = 1.0.0' \
       --depends 'python3-pbxut-plugin-testlink = 1.0.0' \
       --depends 'python3-pbxut-plugin-verbose-reporter = 1.0.1' \
-      --depends 'python3-pbxut-util = 3.6.1' \
+      --depends 'python3-pbxut-util = 4.5.0' \
       --depends 'python3-pynetwork = 2.2' \
       --depends 'python3-pytz' \
       --depends 'python3-reactor = 3.0' \
