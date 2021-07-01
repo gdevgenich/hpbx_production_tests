@@ -55,7 +55,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-configparser2 = 2.2' \
       --depends 'python3-context = 1.4' \
       --depends 'python3-future-comparators = 1.0.1' \
-      --depends 'python3-hpbx-base = 2.86' \
+      --depends 'python3-hpbx-base = 2.83' \
       --depends 'python3-hpbx-dm = 7.36' \
       --depends 'python3-ips-client = 4.14' \
       --depends 'python3-ips-control = 1.24' \
