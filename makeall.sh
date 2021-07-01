@@ -99,10 +99,10 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-protobuf = 3.17.3' \
       --depends 'ffmpeg' \
       --depends 'intermedia-ring = 0.0.2' \
-      --depends 'Xvfb'
-      --depends 'libxss1'
-      --depends 'xdg-utils'
-      --depends 'libasound2'      
+      --depends 'Xvfb' \
+      --depends 'libxss1' \
+      --depends 'xdg-utils' \
+      --depends 'libasound2' \     
       --deb-user $DEB_USER \
       --deb-group $DEB_GROUP \
       --description "${DEB_PACKAGE_DESC}" \
