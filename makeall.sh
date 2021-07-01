@@ -92,7 +92,6 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-umsctl-client = 1.10' \
       --depends 'python3-unison-cp-client = 1.22' \
       --depends 'python3-waveproc = 2.11' \
-      --depends 'python3' \
       --depends 'libpjproject = 2.11-2' \
       --depends 'sipde = 1.2.3' \
       --depends 'sipmon = 2.4.14' \
@@ -103,7 +102,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends xvfb \
       --depends libxss1 \
       --depends xdg-utils \
-      --depends libasound2 \    
+      --depends libasound2 \
       --deb-user $DEB_USER \
       --deb-group $DEB_GROUP \
       --description "${DEB_PACKAGE_DESC}" \
