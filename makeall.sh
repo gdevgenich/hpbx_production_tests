@@ -42,9 +42,8 @@ ls|grep "${DEB_ARCH}.deb"|while read l
 done
 
 # read dependencies from file resource/requirements.txt
-DEB_PYTHON_LIBS_DEPENDENSIES=$(awk -F '/' '!/^$/ {print $NF}' settings/requirements.txt | sed 's|.git||g;s|_|-|g'|while read l;do echo -n " --depends python3-${l}";done)
-
-DEB_PYTHON_LIBS_DEPENDENSIES=( --depends 'base_callfunc = 1.2' --depends 'audio_functions = 2.1' )
+DEB_PYTHON_LIBS_DEPENDENSIES=()
+DEB_PYTHON_LIBS_DEPENDENSIES+=($(awk -F '/' '!/^$/ {print $NF}' settings/requirements1.txt | sed 's|.git||g;s|_|-|g'|while read l;do echo -n " --depends 'python3-${l}'";done))
 
 
 # extra dependencies
