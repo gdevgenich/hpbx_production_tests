@@ -35,7 +35,8 @@ class NG_18109(StepTestCase):
             "call_to": self.user1.get_sip_uri(self.user2.get_phone_number()),
             "default_check_audio": False,
             "sm": sm,
-            "work_dir": "/var/tmp/pjlog/"
+            "work_dir": "/var/tmp/pjlog/",
+            "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
         SimpleCall(**execute_info)
 
