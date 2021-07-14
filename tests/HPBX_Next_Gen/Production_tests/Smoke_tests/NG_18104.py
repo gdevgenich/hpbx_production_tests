@@ -54,6 +54,7 @@ class NG_18104(StepTestCase):
             "timeouts": self.timeouts,
             "sm": sm,
             "work_dir": "/var/tmp/pjlog/",
+            "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
 
         OrderedCall(**execute_info)

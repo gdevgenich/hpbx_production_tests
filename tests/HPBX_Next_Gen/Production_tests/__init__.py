@@ -12,10 +12,9 @@ from sipne import BLFClientFactory
 from step_manager import StepManager
 from call_functions import SimpleCall
 from hpbx_dm import AccountLoader
-from mailbox_functions import MailboxMailCatcherClient, MailboxManager
 
 
-class Automation_functional_tests(PBXTestSuite):
+class AutomationFunctionalTests(PBXTestSuite):
     """
     @suite: HPBX_Next_Gen.Automation_functional_tests
     """
@@ -76,16 +75,11 @@ class Automation_functional_tests(PBXTestSuite):
     def setup_common(self):
         # Get context
         self.context = Context.instance()
-        # Get log level
-        self.debug = True if self.context.get('is_debug') == 'Yes' else False
-        #
         # Create sipde factory
-        # self.client_factory = ClientFactory(debug=self.debug)
         self.client_factory = ClientFactory()
-        # self.client_factory.reset()
         self.context.set("client_factory", self.client_factory)
         # Create sipne factory
-        self.blf_client_factory = BLFClientFactory(debug=self.debug)
+        self.blf_client_factory = BLFClientFactory(debug=True)
         self.context.set("blf_client_factory", self.blf_client_factory)
 
         # create folder for audio
@@ -113,7 +107,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.user4 = self.main_account.acquire_user()
         self.user5 = self.main_account.acquire_user()
 
-        # self.external_user1 = self.external_account.acquire_user()
         self.external_user1 = self.external_account.acquire_user_by_display_name(display_name=self.context.get("server_name"))
 
         self.aa1 = self.main_account.acquire_aa()

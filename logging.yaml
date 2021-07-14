@@ -23,91 +23,91 @@ handlers:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_reactor.log
+        filename: /var/tmp/pjlog/debug_reactor
 
     file_blf:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_blf.log
+        filename: /var/tmp/pjlog/debug_blf
 
     file_sip:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_sip.log
+        filename: /var/tmp/pjlog/debug_sip
 
     file_pbxut_util:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_pbxut_util.log
+        filename: /var/tmp/pjlog/debug_pbxut_util
 
     file_pbxut:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_pbxut.log
+        filename: /var/tmp/pjlog/debug_pbxut
 
     file_cp:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_cp.log
+        filename: /var/tmp/pjlog/debug_cp
 
     file_testlink:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_testlink.log
+        filename: /var/tmp/pjlog/debug_testlink
 
     file_callflow:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_callflow.log
+        filename: /var/tmp/pjlog/debug_callflow
 
     file_inspector:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_inspector.log
+        filename: /var/tmp/pjlog/debug_inspector
 
     file_hpbxdm:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_hpbxdm.log
+        filename: /var/tmp/pjlog/debug_hpbxdm
 
     file_db:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_db.log
+        filename: /var/tmp/pjlog/debug_db
 
     file_audio:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_audio.log
+        filename: /var/tmp/pjlog/debug_audio
 
     file_mail:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_mail.log
+        filename: /var/tmp/pjlog/debug_mail
 
     file_umsctlclient:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_umsctlclient.log
+        filename: /var/tmp/pjlog/debug_umsctlclient
 
     file_rmqclient:
         class : logging.FileHandler
         formatter: simpleFormater
         level: DEBUG
-        filename: /var/tmp/pjlog/debug_rmqclient.log
+        filename: /var/tmp/pjlog/debug_rmqclient
 
 
 ################################################################################

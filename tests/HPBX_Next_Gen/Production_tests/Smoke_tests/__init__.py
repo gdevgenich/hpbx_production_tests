@@ -71,9 +71,8 @@ class check_callee(PBXTestSuite):
         self.context.set('gcrb_freqs', gcrb_freqs)
         self.context.set('gcre_freqs', gcre_freqs)
 
-        audiogen = AudioFileGenerator()
-        gcrb_file = audiogen.generate(freqs=gcrb_freqs, duration=8)
-        gcre_file = audiogen.generate(freqs=gcre_freqs, duration=8)
+        gcrb_file = "/opt/smoke_production/audio/test_audio_197_313.wav"
+        gcre_file = "/opt/smoke_production/audio/test_audio_127_617.wav"
 
         mm = MediaManager(account=self.user1.get_account())
         mm.deactivate_gcrb()
