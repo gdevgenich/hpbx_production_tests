@@ -36,6 +36,7 @@ class NG_18111(StepTestCase):
             "alice": self.user2.get_sipre_client(),
             "call_to": self.user1.get_sip_uri(self.user2.get_extension()),
             "park_action": park_dtmf,
+            "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav",
             "sm": sm
         }
 
@@ -44,7 +45,9 @@ class NG_18111(StepTestCase):
         sm.add_step_after("Checking registration", "Check BLF state before test").add_expected(
             check_blf_state, blf_line=self.blf_line3, state="terminated")
         
-        check_audio_after_unpark = TwoWayCheckAudio(self.user2.get_sipre_client(), self.user3.get_sipre_client(), work_dir="/var/tmp/pjlog/")
+        check_audio_after_unpark = TwoWayCheckAudio(self.user2.get_sipre_client(), self.user3.get_sipre_client(),
+                                                    work_dir="/var/tmp/pjlog/",
+                                                    wav_file="/opt/smoke_production/audio/test_audio_139_431.wav")
         sm.add_step("Wait", None, 5.0)
         sm.add_step("Check BLF state before unpark").add_expected(
             check_blf_state, blf_line=self.blf_line3, state="terminated")
@@ -62,7 +65,8 @@ class NG_18111(StepTestCase):
             check_blf_state, blf_line=self.blf_line3, state="terminated")
         
         sm.add_step("Check no active calls left")\
-            .add_expected(no_active_calls_remain, devices=[self.user1.get_sipre_client(), self.user2.get_sipre_client(), self.user3.get_sipre_client()])
+            .add_expected(no_active_calls_remain, devices=[self.user1.get_sipre_client(), self.user2.get_sipre_client(),
+                                                           self.user3.get_sipre_client()])
 
     def tearDown(self):
         pass

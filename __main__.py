@@ -13,6 +13,12 @@ from pbxut_util import ContextManager
 from pbxut_util.mapper import ContextReader
 from context import Context
 
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
+from yaml import load, dump
+from logging.config import dictConfig
 
 class TestProgram(object):
     """ Test program new
@@ -36,8 +42,8 @@ class TestProgram(object):
         cr = ContextReader()
         name = argv[1]
         config_name = "./settings/settings_{name}.xml".format(name=name)
-        admin_login = argv[2]
-        admin_password = argv[3]
+        admin_login = "admin"
+        admin_password = "umsadmin"
 
         file_context = cr.read(config_name)
 
@@ -67,7 +73,13 @@ class TestProgram(object):
         """
 
         # Step 1. Prepare logging system
-        prepare_logging_system(name="./logging.yaml")
+        server_name = argv[1]
+        with open("./logging.yaml", "rb") as stream:
+            content = stream.read()
+        config = load(content, Loader=Loader)
+        for handler in config["handlers"]:
+            config["handlers"][handler]["filename"] = config["handlers"][handler]["filename"]+"_"+str(server_name)+".log"
+        dictConfig(config)
 
         # Create test runner (test run iterator)
         runner = PBXTestRunner(loader=DirectoryTestLoader(), failfast=False)

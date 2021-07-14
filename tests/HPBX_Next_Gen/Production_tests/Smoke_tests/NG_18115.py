@@ -36,7 +36,8 @@ class NG_18115(StepTestCase):
             "default_check_audio": True,
             "convert_to_call": self.user1.get_account().get_page_to_twowaycall_action(),
             "sm": sm,
-            "work_dir": "/var/tmp/pjlog/"
+            "work_dir": "/var/tmp/pjlog/",
+            "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
 
         PagingCall(**execute_info)

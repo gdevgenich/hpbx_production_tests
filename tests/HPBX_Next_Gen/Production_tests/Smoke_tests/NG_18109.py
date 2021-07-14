@@ -35,12 +35,14 @@ class NG_18109(StepTestCase):
             "call_to": self.user1.get_sip_uri(self.user2.get_phone_number()),
             "default_check_audio": False,
             "sm": sm,
-            "work_dir": "/var/tmp/pjlog/"
+            "work_dir": "/var/tmp/pjlog/",
+            "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
         SimpleCall(**execute_info)
 
         check_call_audio = TwoWayCheckAudio(self.user1.get_sipre_client(), self.user2.get_sipre_client(),
-                                            custom_freqs=self.freqs, work_dir="/var/tmp/pjlog/")
+                                            custom_freqs=self.freqs, work_dir="/var/tmp/pjlog/",
+                                            wav_file="/opt/smoke_production/audio/test_audio_113_391.wav")
         check_cr = CheckCR(cr_data=self.user1.get_last_call_recording_info,
                            cr_file=self.user1.download_last_call_recording, recipient=None,
                            freqs=self.freqs, duration=24, duration_range=3, path="/var/tmp/pjlog/")

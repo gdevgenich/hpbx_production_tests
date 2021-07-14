@@ -1,21 +1,16 @@
 from __future__ import absolute_import
 
 from sys import stdout
-from os import makedirs
-from os.path import exists
 
 from pbxut.framework import PBXTestSuite
 from context import Context
 from configparser2.yaml import loads
 from sipde_client import ClientFactory
 from sipne import BLFClientFactory
-from step_manager import StepManager
-from call_functions import SimpleCall
 from hpbx_dm import AccountLoader
-from mailbox_functions import MailboxMailCatcherClient, MailboxManager
 
 
-class Automation_functional_tests(PBXTestSuite):
+class AutomationFunctionalTests(PBXTestSuite):
     """
     @suite: HPBX_Next_Gen.Automation_functional_tests
     """
@@ -76,22 +71,12 @@ class Automation_functional_tests(PBXTestSuite):
     def setup_common(self):
         # Get context
         self.context = Context.instance()
-        # Get log level
-        self.debug = True if self.context.get('is_debug') == 'Yes' else False
-        #
         # Create sipde factory
-        # self.client_factory = ClientFactory(debug=self.debug)
         self.client_factory = ClientFactory()
-        # self.client_factory.reset()
         self.context.set("client_factory", self.client_factory)
         # Create sipne factory
-        self.blf_client_factory = BLFClientFactory(debug=self.debug)
+        self.blf_client_factory = BLFClientFactory(debug=True)
         self.context.set("blf_client_factory", self.blf_client_factory)
-
-        # create folder for audio
-        audio_dir = './audio'
-        if not exists(audio_dir):
-            makedirs(audio_dir)
 
     def setup_with_unison_cp(self):
         unison_login = self.context.get("unison_login", default_value=None)
@@ -113,7 +98,6 @@ class Automation_functional_tests(PBXTestSuite):
         self.user4 = self.main_account.acquire_user()
         self.user5 = self.main_account.acquire_user()
 
-        # self.external_user1 = self.external_account.acquire_user()
         self.external_user1 = self.external_account.acquire_user_by_display_name(display_name=self.context.get("server_name"))
 
         self.aa1 = self.main_account.acquire_aa()
@@ -141,40 +125,3 @@ class Automation_functional_tests(PBXTestSuite):
             transcript_list = f.read().split(', ')
         self.context.set("vm_transcript1", transcript_list)
         self.context.set("vm_audio_path1", "/opt/smoke_production/resources/vm_audio.wav")
-
-        if self.ng:
-            stdout.write("External users CNAM:\n")
-            self.get_cnam(self.external_user1, self.user1)
-
-    def get_cnam(self, external_user, local_user):
-        """
-        Place a call from PSTN to see what CNAM it has
-        :param external_user: PSTN user
-        :param local_user: local user in organisation with a phone number assigned
-        """
-        local_user.assign_phone_number()
-        local_user.acquire_sip_client(self.client_factory, path="/var/tmp/pjlog")
-        external_user.acquire_sip_client(self.client_factory, path="/var/tmp/pjlog")
-
-        sm = StepManager()
-        execute_info = {
-            "bob": external_user.get_sipre_client(),
-            "alice": local_user.get_sipre_client(),
-            "call_to": external_user.get_sip_uri(local_user.get_phone_number()),
-            "default_check_audio": False,
-            "sm": sm,
-            "work_dir": "/var/tmp/pjlog/"
-        }
-        SimpleCall(**execute_info)
-        sm.add_substep(
-            "Check devices are connected", "Store caller CNAM",
-            action=sm.set, key="CNAM", value=local_user.get_sipre_client().get_remote_uri)
-        sm.run()
-
-        cnam = sm.get("CNAM")[sm.get("CNAM").find('"') + 1: sm.get("CNAM").rfind('"')]
-        stdout.write("{cnam}\n".format(cnam=cnam))
-        external_user.set_cnam(cnam)
-
-        external_user.release_client()
-        local_user.release_client()
-        local_user.get_account().unassign_all_phone_numbers()

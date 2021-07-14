@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 
 from step_manager.pbxut import StepTestCase
-from call_functions import SimpleCallVM, CheckVMCP, CheckEMail
+from call_functions import SimpleCallVM, CheckVMCP
 from context import Context
 
 

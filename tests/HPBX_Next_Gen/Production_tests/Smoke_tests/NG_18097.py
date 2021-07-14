@@ -36,7 +36,8 @@ class NG_18097(StepTestCase):
             "call_to": self.user1.get_sip_uri(self.aa1.get_extension()),
             "dtmf": [("5", 2.0), ("5", 2.0), ("5", 2.0)],
             "sm": sm,
-            "work_dir": "/var/tmp/pjlog/"
+            "work_dir": "/var/tmp/pjlog/",
+            "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
 
         # run the test
