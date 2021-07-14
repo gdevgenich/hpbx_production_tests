@@ -51,7 +51,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-audio-functions = 2.1' \
       --depends 'python3-base-callfunc = 1.2' \
       --depends 'python3-blf-parser = 1.2' \
-      --depends 'python3-call-functions = 7.6' \
+      --depends 'python3-call-functions = 7.7' \
       --depends 'python3-configparser2 = 2.2' \
       --depends 'python3-context = 1.4' \
       --depends 'python3-future-comparators = 1.0.1' \
@@ -94,7 +94,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-waveproc = 2.11' \
       --depends 'libpjproject = 2.11-2' \
       --depends 'sipde = 1.2.3' \
-      --depends 'sipmon = 2.4.14' \
+      --depends 'sipmon = 2.5.8' \
       --depends 'nodejs = 12.20.1-1nodesource1' \
       --depends 'python3-protobuf = 3.17.3' \
       --depends 'ffmpeg' \
