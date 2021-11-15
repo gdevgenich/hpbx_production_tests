@@ -17,6 +17,7 @@
     name: "external"
     readonly: True
     server: "72.53.172.4"
+    cluster_addr: "hpbx4.serverdata.net"
     users:
       - extension: "111"
         display_name: "hpbx2"

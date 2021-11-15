@@ -41,7 +41,7 @@ class AutomationFunctionalTests(PBXTestSuite):
 
         # step 3. Load accounts
         acc_l = AccountLoader()
-        accs = acc_l.loads(accounts)
+        accs = acc_l.loads(accounts, production=True)
         #
         self.main_account = accs[main_acc]
         self.external_account = accs[external_acc]

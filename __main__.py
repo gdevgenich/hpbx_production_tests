@@ -43,7 +43,7 @@ class TestProgram(object):
         name = argv[1]
         config_name = "./settings/settings_{name}.xml".format(name=name)
         admin_login = argv[2]
-        admin_password = argv[3]
+        admin_password = "Lsatex1le1987!!!"
 
         file_context = cr.read(config_name)
 
