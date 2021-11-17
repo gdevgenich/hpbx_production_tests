@@ -64,7 +64,7 @@ class NG_18104(StepTestCase):
         
         call_1 = {
             'from': self.user3.get_extension(), 'caller_name': self.user3.get_display_name(),
-            'to': self.hg1.get_extension(), 'called_name': self.hg1.get_prefixed_display_name()
+            'to': self.hg1.get_extension(), 'called_name': "Hunt Group " + self.hg1.get_prefixed_display_name()
         }
         call_2 = {
             'from': self.user3.get_extension(),
