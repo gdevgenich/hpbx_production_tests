@@ -5,7 +5,7 @@ from call_functions import OrderedCall
 from call_functions.matchers.matchers import smart_compare
 from context import Context
 from hpbx_dm import combine_names
-
+import time
 
 class NG_18104(StepTestCase):
     """
@@ -29,7 +29,7 @@ class NG_18104(StepTestCase):
         self.hg1.add_member_to_hg(self.user2)
         for member in self.hg1.get_members():
             member.change_state_of_member_in_hg()
-
+        time.sleep(10)
         # prepare lists for call scenario
         self.hg_members = [self.user1.get_sipre_client(), self.user2.get_sipre_client()]
         self.order = [[0, 1, 2], [0, 1, 2]]

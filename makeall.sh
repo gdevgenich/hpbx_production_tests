@@ -51,7 +51,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends 'python3-audio-functions = 2.1' \
       --depends 'python3-base-callfunc = 1.2' \
       --depends 'python3-blf-parser = 1.2' \
-      --depends 'python3-call-functions = 7.7' \
+      --depends 'python3-call-functions = 7.17' \
       --depends 'python3-configparser2 = 2.2' \
       --depends 'python3-context = 1.4' \
       --depends 'python3-future-comparators = 1.0.1' \
