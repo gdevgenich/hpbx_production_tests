@@ -52,7 +52,7 @@ class NG_18097(StepTestCase):
         call_1 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
                   'to': self.user2.get_extension(), 'called_name': self.user2.get_display_name()}
         call_2 = {'from': self.user1.get_extension(), 'caller_name': self.user1.get_display_name(),
-                  'to': self.aa1.get_extension(), 'called_name': "Auto attendant"}
+                  'to': self.aa1.get_extension(), 'called_name': self.aa1.get_display_name()}
 
         sm.add_step("wait", duration=8.0)
         sm.add_step("Check call history")\
