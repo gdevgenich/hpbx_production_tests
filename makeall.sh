@@ -3,16 +3,11 @@
 set -e 
 set -x
 
-DEB_USER="jenkins"
-DEB_GROUP="jenkins"
 DEB_DATA="resources settings tests audio __main__.py plan.txt logging.yaml "
 DEB_DIRECTORY="opt/smoke_production"
 DEB_PACKAGE_NAME="hpbx-smoke-tests"
 DEB_PACKAGE_VERSION="$(cat version)"
-DEB_DEVEMAIL="dgirdyuk@intermedia.net"
 DEB_PACKAGE_DESC="HPBX smoke test"
-DEB_OS_PREFIX='deb10'
-DEB_ARCH='amd64'
 
 if [ ! -z "$BUILD_NUMBER" ] && [ ! -z "$SOURCE_GIT_BRANCH" ]
 then

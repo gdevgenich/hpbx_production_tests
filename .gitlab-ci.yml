@@ -1,44 +1,69 @@
-image: debian:10
+image: debian:11
 stages:
   - build
   - aptrepo
 
 variables:
-  DISTR: buster
-  APT_LOCAL_REPO: imedia-hpbx-testing-buster
-  APT_REPO: imedia-hpbx-testing
-  APT_DIR: imedia-hpbx-testing-buster
-  PACKAGE_NAME: hpbx-smoke-tests
-  PACKAGE_VERSION: 1.1.0
-  PACKAGE_DESC: HPBX production smoke tests
   DEB_OS_PREFIX: deb10
+  DISTR: buster
+  APT_LOCAL_REPO: imedia-hpbx-testing-${DISTR}
+  APT_DIR: imedia-hpbx-testing-${DISTR}
+  APT_REPO: imedia-hpbx-testing
   DEB_ARCH: amd64
   DEVEMAIL: dgirdyuk@intermedia.net
-  DEB_USER: root
-  DEB_GROUP: root
+  DEB_USER: jenkins
+  DEB_GROUP: jenkins
 
-
-hpbx-smoke-tests:build:
-  image: debian:9
+.hpbx-smoke-tests-default:build:
   stage: build
   tags: [hpbx]
-  script:
+  before_script:
     - apt-get update
     - apt-get install git curl gnupg2 ruby ruby-dev rubygems build-essential -y
-    - gem install --no-ri --no-rdoc fpm -v 1.11.0
+  after_script:
     - ./makeall.sh
   artifacts:
     expire_in: 1 days
     paths:
       - "*deb" 
 
-hpbx-smoke-tests:aptrepo:
-  image: debian:9
+.hpbx-smoke-tests-default:aptrepo:
+  image: debian:11
   stage: aptrepo
-  variables:
-    DEB_DIR: opt/smoke_production
   tags: [hpbx]
   script:
     - apt-get update
     - apt-get install curl -y
     - ./pushdeb.sh
+
+hpbx-smoke-tests-deb10:build:
+  image: debian:10
+  variables: 
+    DEB_OS_PREFIX: deb10
+  script:
+    - gem install --no-ri --no-rdoc fpm -v 1.11.0
+  extends: .hpbx-smoke-tests-default:build
+
+hpbx-smoke-tests-deb11:build:
+  image: debian:11
+  variables: 
+    DEB_OS_PREFIX: deb11  
+  script:
+    - gem install --no-document fpm -v 1.14.0
+  extends: .hpbx-smoke-tests-default:build
+
+hpbx-smoke-tests-deb10:aptrepo:
+  variables:
+    DISTR: buster
+    DEB_OS_PREFIX: deb10
+    APT_LOCAL_REPO: imedia-hpbx-testing-${DISTR}
+    APT_DIR: imedia-hpbx-testing-${DISTR}
+  extends: .hpbx-smoke-tests-default:aptrepo
+
+hpbx-smoke-tests-deb11:aptrepo:
+  variables:
+    DISTR: bullseye
+    DEB_OS_PREFIX: deb11
+    APT_LOCAL_REPO: imedia-hpbx-testing-${DISTR}
+    APT_DIR: imedia-hpbx-testing-${DISTR}
+  extends: .hpbx-smoke-tests-default:aptrepo
