@@ -42,58 +42,58 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --version "$DEB_BUILD_NUMBER" \
       --architecture "${DEB_ARCH}" \
       --maintainer "${DEB_DEVEMAIL}" \
-      --depends 'python3-anymeeting-client = 0.2' \
-      --depends 'python3-audio-functions = 2.1' \
-      --depends 'python3-base-callfunc = 1.2' \
-      --depends 'python3-blf-parser = 1.2' \
-      --depends 'python3-call-functions = 7.20' \
-      --depends 'python3-configparser2 = 2.2' \
-      --depends 'python3-context = 1.4' \
-      --depends 'python3-future-comparators = 1.0.1' \
-      --depends 'python3-hpbx-base = 2.83' \
-      --depends 'python3-hpbx-dm = 7.78' \
-      --depends 'python3-ips-client = 4.14' \
-      --depends 'python3-ips-control = 1.24' \
-      --depends 'python3-log-functions = 1.0' \
-      --depends 'python3-mailbox-functions = 2.6' \
-      --depends 'python3-mailcc = 2.0' \
-      --depends 'python3-msg-util = 1.0.0' \
-      --depends 'python3-mwi-parser = 1.0' \
-      --depends 'python3-pbxut = 4.5.0' \
-      --depends 'python3-pbxut-plugin-alert-case = 1.0' \
-      --depends 'python3-pbxut-plugin-classic-reporter = 1.0.0' \
-      --depends 'python3-pbxut-plugin-context = 1.0.0' \
-      --depends 'python3-pbxut-plugin-context-reader = 1.0.2' \
-      --depends 'python3-pbxut-plugin-hpbx-version = 1.0.0' \
-      --depends 'python3-pbxut-plugin-mail-reporter = 1.1.0' \
-      --depends 'python3-pbxut-plugin-simple-filter = 1.0.0' \
-      --depends 'python3-pbxut-plugin-summary-case = 1.0.0' \
-      --depends 'python3-pbxut-plugin-testlink = 1.0.0' \
-      --depends 'python3-pbxut-plugin-verbose-reporter = 1.0.1' \
-      --depends 'python3-pbxut-util = 4.5.0' \
-      --depends 'python3-pynetwork = 2.2' \
-      --depends 'python3-pytz' \
-      --depends 'python3-reactor = 3.0' \
-      --depends 'python3-rmq-client = 1.8' \
-      --depends 'python3-robert2 = 2.0' \
-      --depends 'python3-rpclient = 1.2' \
-      --depends 'python3-sdplib = 1.0' \
-      --depends 'python3-sipde-client = 2.4.1' \
-      --depends 'python3-siplib = 4.0' \
-      --depends 'python3-sipne = 3.5.1' \
-      --depends 'python3-soap-client = 1.1' \
-      --depends 'python3-step-manager = 2.12' \
-      --depends 'python3-testlink = 3.0' \
-      --depends 'python3-umsctl-client = 1.10' \
-      --depends 'python3-unison-cp-client = 1.22' \
-      --depends 'python3-waveproc = 2.11' \
-      --depends 'libpjproject = 2.11-2' \
-      --depends 'sipde = 1.2.3' \
-      --depends 'sipmon = 2.5.8' \
-      --depends 'nodejs = 12.20.1-1nodesource1' \
-      --depends 'python3-protobuf = 3.17.3' \
-      --depends 'ffmpeg' \
-      --depends 'intermedia-ring = 0.0.2' \
+      --depends "${PYTHON_BINARY}-anymeeting-client = 0.2" \
+      --depends "${PYTHON_BINARY}-audio-functions = 2.1" \
+      --depends "${PYTHON_BINARY}-base-callfunc = 1.2" \
+      --depends "${PYTHON_BINARY}-blf-parser = 1.2" \
+      --depends "${PYTHON_BINARY}-call-functions = 7.20" \
+      --depends "${PYTHON_BINARY}-configparser2 = 2.2" \
+      --depends "${PYTHON_BINARY}-context = 1.4" \
+      --depends "${PYTHON_BINARY}-future-comparators = 1.0.1" \
+      --depends "${PYTHON_BINARY}-hpbx-base = 2.83" \
+      --depends "${PYTHON_BINARY}-hpbx-dm = 7.78" \
+      --depends "${PYTHON_BINARY}-ips-client = 4.14" \
+      --depends "${PYTHON_BINARY}-ips-control = 1.24" \
+      --depends "${PYTHON_BINARY}-log-functions = 1.0" \
+      --depends "${PYTHON_BINARY}-mailbox-functions = 2.6" \
+      --depends "${PYTHON_BINARY}-mailcc = 2.0" \
+      --depends "${PYTHON_BINARY}-msg-util = 1.0.0" \
+      --depends "${PYTHON_BINARY}-mwi-parser = 1.0" \
+      --depends "${PYTHON_BINARY}-pbxut = 4.5.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-alert-case = 1.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-classic-reporter = 1.0.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-context = 1.0.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-context-reader = 1.0.2" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-hpbx-version = 1.0.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-mail-reporter = 1.1.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-simple-filter = 1.0.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-summary-case = 1.0.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-testlink = 1.0.0" \
+      --depends "${PYTHON_BINARY}-pbxut-plugin-verbose-reporter = 1.0.1" \
+      --depends "${PYTHON_BINARY}-pbxut-util = 4.5.0" \
+      --depends "${PYTHON_BINARY}-pynetwork = 2.2" \
+      --depends "${PYTHON_BINARY}-reactor = 3.0" \
+      --depends "${PYTHON_BINARY}-rmq-client = 1.8" \
+      --depends "${PYTHON_BINARY}-robert2 = 2.0" \
+      --depends "${PYTHON_BINARY}-rpclient = 1.2" \
+      --depends "${PYTHON_BINARY}-sdplib = 1.0" \
+      --depends "${PYTHON_BINARY}-sipde-client = 2.4.1" \
+      --depends "${PYTHON_BINARY}-siplib = 4.0" \
+      --depends "${PYTHON_BINARY}-sipne = 3.5.1" \
+      --depends "${PYTHON_BINARY}-soap-client = 1.1" \
+      --depends "${PYTHON_BINARY}-step-manager = 2.12" \
+      --depends "${PYTHON_BINARY}-testlink = 3.0" \
+      --depends "${PYTHON_BINARY}-umsctl-client = 1.10" \
+      --depends "${PYTHON_BINARY}-unison-cp-client = 1.22" \
+      --depends "${PYTHON_BINARY}-waveproc = 2.11" \
+      --depends "python3-pytz" \
+      --depends "libpjproject = 2.11-2" \
+      --depends "sipde = 1.2.3" \
+      --depends "sipmon = 2.5.8" \
+      --depends "nodejs = 12.20.1-1nodesource1" \
+      --depends "${PYTHON_BINARY}-protobuf = 3.17.3" \
+      --depends "ffmpeg" \
+      --depends "intermedia-ring = 0.0.2" \
       --depends xvfb \
       --depends libxss1 \
       --depends xdg-utils \

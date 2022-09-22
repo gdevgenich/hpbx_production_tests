@@ -13,6 +13,7 @@ variables:
   DEVEMAIL: dgirdyuk@intermedia.net
   DEB_USER: jenkins
   DEB_GROUP: jenkins
+  PYTHON_BINARY: python3
 
 .hpbx-smoke-tests-default:build:
   stage: build
@@ -48,6 +49,7 @@ hpbx-smoke-tests-deb11:build:
   image: debian:11
   variables: 
     DEB_OS_PREFIX: deb11  
+    PYTHON_BINARY: python3.9
   script:
     - gem install --no-document fpm -v 1.14.0
   extends: .hpbx-smoke-tests-default:build
