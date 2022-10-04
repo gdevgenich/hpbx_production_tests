@@ -85,13 +85,18 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-testlink = 3.0" \
       --depends "${PYTHON_BINARY}-umsctl-client = 1.10" \
       --depends "${PYTHON_BINARY}-unison-cp-client = 1.22" \
-      --depends "${PYTHON_BINARY}-waveproc = 2.11" \
-      --depends "python3-pytz" \
+      --depends "${PYTHON_BINARY}-pytz" \
+      --depends "${PYTHON_BINARY}-protobuf = 3.17.3" \
+      --depends "python3-urllib3" \
+      --depends "python3-chardet" \
+      --depends "python3-certifi" \
+      --depends "python3-idna" \
+      --depends "python3-slixmpp" \
+      --depends "python3-magic" \
       --depends "libpjproject = 2.11-2" \
       --depends "sipde = 1.2.3" \
       --depends "sipmon = 2.5.8" \
       --depends "nodejs = 12.20.1-1nodesource1" \
-      --depends "${PYTHON_BINARY}-protobuf = 3.17.3" \
       --depends "ffmpeg" \
       --depends "intermedia-ring = 0.0.2" \
       --depends xvfb \
