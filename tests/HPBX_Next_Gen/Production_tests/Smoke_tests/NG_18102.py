@@ -13,6 +13,7 @@ class NG_18102(StepTestCase):
     """
 
     def setUp(self):
+        self.TIMEOUT = 720
         self.context = Context.instance()
         self.user1 = self.context.get("user1")
         self.user2 = self.context.get("user2")
@@ -49,7 +50,7 @@ class NG_18102(StepTestCase):
 
         SimpleCallVM(**execute_info)
 
-        sm.add_step("Wait for message", duration=40)
+        sm.add_step("Wait for message", duration=240)
 
         # getting transcript from third-party service takes long time
         # here we assume that if email is sent, then file is present on FS
