@@ -6,7 +6,7 @@ stages:
 variables:
   APT_REPO: imedia-hpbx-testing
   DEB_ARCH: amd64
-  DEVEMAIL: dgirdyuk@intermedia.net
+  DEB_DEVEMAIL: dgirdyuk@intermedia.net
   DEB_USER: jenkins
   DEB_GROUP: jenkins
   PYTHON_BINARY: python3
