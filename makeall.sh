@@ -94,9 +94,9 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "python3-idna" \
       --depends "python3-slixmpp" \
       --depends "python3-magic" \
-      --depends "libpjproject = 2.11-2" \
-      --depends "sipde = 1.2.3" \
-      --depends "sipmon = 2.5.8" \
+      --depends "sipde = 1.3.0-1+deb11" \
+      --depends "sipmon = 2.7.1-1+deb11" \
+      --depends "libpjproject = 2.11-4+deb11" \
       --depends "nodejs = 12.22.12~dfsg-1~deb11u1" \
       --depends "ffmpeg" \
       --depends "intermedia-ring = 0.0.2" \
