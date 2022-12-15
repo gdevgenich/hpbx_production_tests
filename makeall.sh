@@ -88,6 +88,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-protobuf = 3.17.3" \
       --depends "${PYTHON_BINARY}-pytz" \
       --depends "${PYTHON_BINARY}-waveproc" \
+      --depends "${PYTHON_BINARY}-multipart" \
       --depends "python3-urllib3" \
       --depends "python3-chardet" \
       --depends "python3-certifi" \
