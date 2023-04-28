@@ -3,12 +3,8 @@
 
 from sys import exit, argv
 from logging import getLogger
-
-from log_functions import prepare_logging_system
-
 from pbxut import PBXTestRunner
 from pbxut.loaders.directory import DirectoryTestLoader
-
 from pbxut_util import ContextManager
 from pbxut_util.mapper import ContextReader
 from context import Context
@@ -42,8 +38,8 @@ class TestProgram(object):
         cr = ContextReader()
         name = argv[1]
         config_name = "./settings/settings_{name}.xml".format(name=name)
-        admin_login = argv[2]
-        admin_password = argv[3]
+        admin_login = "dgirdyuk@wh.intermedia.net"
+        admin_password = "1987Lsatex1le!!!!"
 
         file_context = cr.read(config_name)
 
@@ -55,6 +51,12 @@ class TestProgram(object):
         global_context.set("server_name", name)
         for plugin in file_context.plugins:
             self.__log.debug('Create plugin: plugin_class = {plugin_class!r}'.format(plugin_class=plugin.plugin_class))
+            if plugin.plugin_id == "MailReporterPlugin":
+                subject = f'[AUTOTEST] {name} report:'+' {{ case_resolution }}'
+                subject = ("subject", subject)
+                plugin.params.append(subject)
+            elif plugin.plugin_id == "ContextPlugun":
+                plugin.params.append(("test_profile", name))
             inst = cm.inst_create(inst_name=plugin.plugin_class, args=[], kwargs={"context": file_context})
             cm.inst_initialize(inst, args=[runner], kwargs=plugin.params)
             runner.plugins.append(inst)
