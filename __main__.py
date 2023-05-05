@@ -37,9 +37,9 @@ class TestProgram(object):
         # Step 2. Reading parameters
         cr = ContextReader()
         name = argv[1]
-        config_name = "./settings/settings_{name}.xml".format(name=name)
-        admin_login = argv[2]
-        admin_password = argv[3]
+        config_name = "./settings/settings.xml"
+        admin_login = "dgirdyuk@wh.intermedia.net"
+        admin_password = "1987Lsatex1le!!!!"
 
         file_context = cr.read(config_name)
 
