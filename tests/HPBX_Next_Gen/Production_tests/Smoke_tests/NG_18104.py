@@ -7,6 +7,7 @@ from context import Context
 from hpbx_dm import combine_names
 import time
 
+
 class NG_18104(StepTestCase):
     """
     @name: NG-18104
@@ -33,18 +34,18 @@ class NG_18104(StepTestCase):
         # prepare lists for call scenario
         self.hg_members = [self.user1.get_sipre_client(), self.user2.get_sipre_client()]
         self.order = [[0, 1, 2], [0, 1, 2]]
-        
+
         timeout = min(self.user1.get_timeout(), self.user2.get_timeout())
-        tf = 5
-        self.timeouts = [timeout + tf, timeout + tf, 8]
+        tf = 7
+        idle_timer = 20
+        self.timeouts = [timeout + tf, timeout + tf + idle_timer, 12]
 
         self.history_counter = self.hg1.get_hg_call_history_count()
-    
+
     def get_history_counter_diff(self):
         return self.hg1.get_hg_call_history_count() - self.history_counter
-    
-    def initialize(self, sm):
 
+    def initialize(self, sm):
         execute_info = {
             "bob": self.user3.get_sipre_client(),
             "alice": self.user1.get_sipre_client(),
@@ -61,7 +62,7 @@ class NG_18104(StepTestCase):
 
         sm.add_step("Check HG history counter after test").add_expected(
             smart_compare, exp=1, real=self.get_history_counter_diff)
-        
+
         call_1 = {
             'from': self.user3.get_extension(), 'caller_name': self.user3.get_display_name(),
             'to': self.hg1.get_extension(), 'called_name': self.hg1.get_prefixed_display_name()
@@ -74,12 +75,12 @@ class NG_18104(StepTestCase):
 
         sm.add_step("Check call history").add_expected(
             self.hg1.get_account().check_call_history, calls=[call_1, call_2])
-        
+
         participants = {
             "number_from": self.user3.get_extension(), "from_display_name": self.user3.get_display_name(),
             "hg_name": self.hg1.get_display_name(), "hgm_name": self.user1.get_full_name()
         }
-        
+
         sm.add_step("Get HG call history", sm.set, key="hgch", value=self.hg1.get_last_hg_call_history_call)
         sm.add_step("Check template answer member").add_expected(
             sm.call_method_of_stored_value, key="hgch", method_name="check_template_answer_member")

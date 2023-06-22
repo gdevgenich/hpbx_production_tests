@@ -36,8 +36,6 @@ class AutomationFunctionalTests(PBXTestSuite):
         accounts = res.get(name="accounts", section=profile)
         main_acc = res.get(name="main_acc", section=profile)
         external_acc = res.get(name="external_acc", section=profile)
-        self.ng = res.get(name="ng", section=profile)
-        self.context.set("ng", self.ng)
 
         # step 3. Load accounts
         acc_l = AccountLoader()
