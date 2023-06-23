@@ -1,30 +1,31 @@
-hpbx2:
-  name: auto-test02
-  hp_id: '1671369'
-  readonly: false
-  autocreate: true
-  autoremove: true
-  server: 199.193.202.81
-  cluster_addr: hpbx2.serverdata.net
-  phone_numbers:
-  - '14083296051'
-  al_leid: '1247303'
-  extension_length: 3
-  db_access: false
-  ng: true
-external_all:
-  name: external
-  readonly: true
-  server: 72.53.172.4
-  users:
-  - extension: '222'
-    display_name: hpbx2
-    phone_number: '16504183242'
-    devices:
-    - name: smoke_test_hpbx2
-      device_id: '18996640'
-      pwd: DOgRSYJJ
-  ips_domain: ''
+"hpbx2":
+    name: "auto-test02"
+    hp_id: "1671369"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "199.193.202.81"
+    cluster_addr: "hpbx2.serverdata.net"
+    phone_numbers:
+        - "14083296051"
+    al_leid: "1247303"
+    extension_length: 3
+    db_access: False
+    ng: True
+"external_all":
+    name: "external"
+    readonly: True
+    server: "72.53.172.4"
+    cluster_addr: "hpbx4.serverdata.net"
+    users:
+      - extension: "111"
+        display_name: "hpbx2"
+        phone_number: "16504183242"
+        devices:
+          - name: "smoke_test_hpbx2"
+            device_id: "18996640"
+            pwd: "DOgRSYJJ"
+    ips_domain: ""
 qahpbx12:
     name: "imqa-smoke-ca12"
     hp_id: "8471751"
@@ -36,6 +37,19 @@ qahpbx12:
     phone_numbers:
         - "16502380088"
     al_leid: "1185893"
+    extension_length: 3
+    db_access: False
+qahpbx21:
+    name: "imqa-smoke-vx21"
+    hp_id: "8521991"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "qahpbx21.qaserverdata.net"
+    cluster_addr: "qahpbx21.qaserverdata.net"
+    phone_numbers:
+        - "16502381714"
+    al_leid: "1187066"
     extension_length: 3
     db_access: False
 external_qa:
@@ -51,4 +65,11 @@ external_qa:
           - name: "user_ca12_smoke"
             device_id: "95144038"
             pwd: "1jtr}?@=T&_)D5a}"
+      - extension: "117"
+        display_name: "qahpbx21"
+        phone_number: "16502012049"
+        devices:
+          - name: "user_ca21_smoke"
+            device_id: "82081603"
+            pwd: "1Q_Mr*cNLXxGIr;;"
     ips_domain: ""

@@ -1,9 +1,12 @@
 "hpbx2":
-    ng: True
     accounts: "/opt/smoke_production/resources/accounts.yaml"
     main_acc: "hpbx2"
     external_acc: "external_all"
 "qahpbx12":
     accounts: "/opt/smoke_production/resources/accounts.yaml"
     main_acc: "qahpbx12"
+    external_acc: "external_qa"
+"qahpbx21":
+    accounts: "/opt/smoke_production/resources/accounts.yaml"
+    main_acc: "qahpbx21"
     external_acc: "external_qa"

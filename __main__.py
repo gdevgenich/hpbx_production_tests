@@ -16,13 +16,13 @@ except ImportError:
 from yaml import load, dump
 from logging.config import dictConfig
 
+
 class TestProgram(object):
     """ Test program new
     """
 
     def __init__(self):
         self.__log = getLogger('app')
-
 
     def dispose(self):
         """ Dispose
@@ -52,7 +52,7 @@ class TestProgram(object):
         for plugin in file_context.plugins:
             self.__log.debug('Create plugin: plugin_class = {plugin_class!r}'.format(plugin_class=plugin.plugin_class))
             if plugin.plugin_id == "MailReporterPlugin":
-                subject = f'[AUTOTEST] {name} report:'+' {{ case_resolution }}'
+                subject = f'[AUTOTEST] {name} smoke production report:'+' {{ case_resolution }}'
                 subject = ("subject", subject)
                 plugin.params.append(subject)
             elif plugin.plugin_id == "ContextPlugun":
@@ -68,7 +68,6 @@ class TestProgram(object):
         while runner.plugins:
             plugin = runner.plugins.pop(0)
             plugin.dispose()
-
 
     def run(self):
         """ Run application

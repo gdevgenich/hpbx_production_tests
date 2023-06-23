@@ -36,9 +36,14 @@ class NG_18104(StepTestCase):
         self.order = [[0, 1, 2], [0, 1, 2]]
 
         timeout = min(self.user1.get_timeout(), self.user2.get_timeout())
-        tf = 7
-        idle_timer = 20
-        self.timeouts = [timeout + tf, timeout + tf + idle_timer, 12]
+
+        if 'release-59' in self.context.get('server_version'):
+            tf = 5
+            self.timeouts = [timeout + tf, timeout + tf, 8]
+        else:
+            tf = 7
+            idle_timer = 20
+            self.timeouts = [timeout + tf, timeout + tf + idle_timer, 12]
 
         self.history_counter = self.hg1.get_hg_call_history_count()
 

@@ -34,7 +34,7 @@
     <plugin id="MailReporterPlugin" class="pbxut_plugin.mail_reporter.MailReporterPlugin">
        <param name="host" value="127.0.0.1" />
        <param name="port" value="25" />
-       <param name="recipients" value="dgirdyuk@intermedia.net, ipetrov@intermedia.net, VoiceAppDevOPSTeam@intermedia.net" />
+       <param name="recipients" value="vsyur@intermedia.net, dgirdyuk@intermedia.net, ipetrov@intermedia.net, VoiceAppDevOPSTeam@intermedia.net" />
        <param name="template" value="resources/message.jinja2" />
        <param name="verbose" value="Yes" />
     </plugin>

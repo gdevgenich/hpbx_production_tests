@@ -59,7 +59,7 @@ class NG_18102(StepTestCase):
             vm_data=self.user2.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
-            sender_number=self.user1.get_extension()
+            sender_number=self.user1.get_extension(), path="/var/tmp/pjlog/"
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user2")
@@ -69,7 +69,7 @@ class NG_18102(StepTestCase):
             vm_data=self.user3.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
-            sender_number=self.user1.get_extension()
+            sender_number=self.user1.get_extension(), path="/var/tmp/pjlog/"
         )
         check_vm_cp_step.add_substeps_to_step(
             sm.add_step("Check received VM from CP for user3")

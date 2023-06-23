@@ -29,7 +29,7 @@ class AutomationFunctionalTests(PBXTestSuite):
         res = loads(content)
         #
         profile = self.context.get('test_profile')
-        stdout.write('Using profile: {profile!r}\n'.format(profile=profile))
+        stdout.write('Using profile: {profile!r}\n\n'.format(profile=profile))
         if not profile:
             raise EnvironmentError('No setup "test_profile" variable')
         # get parameters
@@ -123,3 +123,8 @@ class AutomationFunctionalTests(PBXTestSuite):
             transcript_list = f.read().split(', ')
         self.context.set("vm_transcript1", transcript_list)
         self.context.set("vm_audio_path1", "/opt/smoke_production/resources/vm_audio.wav")
+
+        #Getting version
+        ver = self.main_account.get_server_version()
+        self.context.set("server_version", ver)
+        stdout.write(f"Smoke tests execution on HPBX version: {ver}\n\n")
