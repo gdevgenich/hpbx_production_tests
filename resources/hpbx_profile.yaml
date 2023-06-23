@@ -2,6 +2,10 @@
     accounts: "/opt/smoke_production/resources/accounts.yaml"
     main_acc: "hpbx2"
     external_acc: "external_all"
+"qahpbx11":
+    accounts: "/opt/smoke_production/resources/accounts.yaml"
+    main_acc: "qahpbx11"
+    external_acc: "external_qa2"
 "qahpbx12":
     accounts: "/opt/smoke_production/resources/accounts.yaml"
     main_acc: "qahpbx12"

@@ -26,6 +26,19 @@
             device_id: "18996640"
             pwd: "DOgRSYJJ"
     ips_domain: ""
+qahpbx11:
+    name: "imqa-smoke-vx11"
+    hp_id: "8552119"
+    readonly: False
+    autocreate: True
+    autoremove: True
+    server: "qapbx-11.qaserverdata.net"
+    cluster_addr: "qapbx-11.qaserverdata.net"
+    phone_numbers:
+        - "16502384975"
+    al_leid: "1189872"
+    extension_length: 3
+    db_access: False
 qahpbx12:
     name: "imqa-smoke-ca12"
     hp_id: "8471751"
@@ -72,4 +85,18 @@ external_qa:
           - name: "user_ca21_smoke"
             device_id: "82081603"
             pwd: "1Q_Mr*cNLXxGIr;;"
+    ips_domain: ""
+external_qa2:
+    name: "imqa-a-pstn-12"
+    readonly: True
+    server: "qahpbx12.qaserverdata.net"
+    cluster_addr: "qahpbx12.qaserverdata.net"
+    users:
+      - extension: "100"
+        display_name: "qahpbx11"
+        phone_number: "16502385289"
+        devices:
+          - name: "user_vx11_smoke"
+            device_id: "87827148"
+            pwd: "6^{k%mV6c8ZPd$b@"
     ips_domain: ""
