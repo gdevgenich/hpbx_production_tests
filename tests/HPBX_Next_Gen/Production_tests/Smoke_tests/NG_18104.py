@@ -24,12 +24,15 @@ class NG_18104(StepTestCase):
 
         # prepare hunt group
         self.hg1 = self.context.get('hg1')
-        self.hg1.restore_default_values()
-        self.hg1.set_calling_method_for_hg('A')
+        self.hg1.remove_all_members_from_hg()
+        time.sleep(2)
         self.hg1.add_member_to_hg(self.user1)
+        time.sleep(2)
         self.hg1.add_member_to_hg(self.user2)
+        time.sleep(2)
         for member in self.hg1.get_members():
             member.change_state_of_member_in_hg()
+            time.sleep(2)
         time.sleep(10)
         # prepare lists for call scenario
         self.hg_members = [self.user1.get_sipre_client(), self.user2.get_sipre_client()]

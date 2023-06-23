@@ -70,6 +70,10 @@ class check_callee(PBXTestSuite):
         self.aa1.bh.remove_all_actions()
         self.aa1.bh.create_action(action='ext', dtmf='5', destination=self.user3.get_extension())
 
+        self.hg1 = self.context.get('hg1')
+        self.hg1.remove_all_members_from_hg()
+        self.hg1.set_calling_method_for_hg('A')
+
         self.user1.get_account().enable_call_recording()
         gcrb_freqs = [197, 313]
         gcre_freqs = [127, 617]
