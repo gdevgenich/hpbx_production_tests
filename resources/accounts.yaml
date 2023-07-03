@@ -32,8 +32,8 @@ qahpbx11:
     readonly: False
     autocreate: True
     autoremove: True
-    server: "qapbx-11.qaserverdata.net"
-    cluster_addr: "qapbx-11.qaserverdata.net"
+    server: "qapbx-vx-11.qaserverdata.net"
+    cluster_addr: "qapbx-vx-11.qaserverdata.net"
     phone_numbers:
         - "16502384975"
     al_leid: "1189872"
