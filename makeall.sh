@@ -77,7 +77,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-robert2 = 2.0" \
       --depends "${PYTHON_BINARY}-rpclient = 1.2" \
       --depends "${PYTHON_BINARY}-sdplib = 1.0" \
-      --depends "${PYTHON_BINARY}-sipde-client = 2.4.1" \
+      --depends "${PYTHON_BINARY}-sipde-client = 2.4.4" \
       --depends "${PYTHON_BINARY}-siplib = 4.0" \
       --depends "${PYTHON_BINARY}-sipne = 3.5.1" \
       --depends "${PYTHON_BINARY}-soap-client = 1.1" \
@@ -86,7 +86,6 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-umsctl-client = 1.10" \
       --depends "${PYTHON_BINARY}-unison-cp-client = 1.22" \
       --depends "${PYTHON_BINARY}-protobuf = 3.17.3" \
-      --depends "${PYTHON_BINARY}-pytz" \
       --depends "${PYTHON_BINARY}-waveproc" \
       --depends "${PYTHON_BINARY}-multipart" \
       --depends "python3-urllib3" \
@@ -96,9 +95,9 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "python3-slixmpp" \
       --depends "python3-magic" \
       --depends "sipde = 1.3.0-1+deb11" \
-      --depends "sipmon = 2.7.1-1+deb11" \
-      --depends "libpjproject = 2.11-4+deb11" \
-      --depends "nodejs = 12.22.12~dfsg-1~deb11u1" \
+      --depends "sipmon = 2.10.0-1+deb11" \
+      --depends "libpjproject = 2.13-5+deb11" \
+      --depends "nodejs = 16.18.1-deb-1nodesource1" \
       --depends "ffmpeg" \
       --depends "intermedia-ring = 0.0.2" \
       --depends xvfb \
