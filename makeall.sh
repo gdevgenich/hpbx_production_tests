@@ -46,7 +46,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-audio-functions = 2.1" \
       --depends "${PYTHON_BINARY}-base-callfunc = 1.2" \
       --depends "${PYTHON_BINARY}-blf-parser = 1.2" \
-      --depends "${PYTHON_BINARY}-call-functions = 7.33" \
+      --depends "${PYTHON_BINARY}-call-functions = 7.34" \
       --depends "${PYTHON_BINARY}-configparser2 = 2.2" \
       --depends "${PYTHON_BINARY}-context = 1.4" \
       --depends "${PYTHON_BINARY}-future-comparators = 1.0.1" \
@@ -71,7 +71,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-pbxut-plugin-testlink = 1.0.0" \
       --depends "${PYTHON_BINARY}-pbxut-plugin-verbose-reporter = 1.0.1" \
       --depends "${PYTHON_BINARY}-pbxut-util = 4.5.0" \
-      --depends "${PYTHON_BINARY}-pynetwork = 2.2" \
+      --depends "${PYTHON_BINARY}-pynetwork = 2.3" \
       --depends "${PYTHON_BINARY}-reactor = 3.0" \
       --depends "${PYTHON_BINARY}-rmq-client = 1.8" \
       --depends "${PYTHON_BINARY}-robert2 = 2.0" \
