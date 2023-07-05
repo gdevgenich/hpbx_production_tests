@@ -44,11 +44,6 @@ class check_callee(PBXTestSuite):
         self.user3.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
         self.external_user1.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
 
-        self.user1.get_sipre_client().set_codec(codec_name="opus/48000/2", codec_prio=0)
-        self.user2.get_sipre_client().set_codec(codec_name="opus/48000/2", codec_prio=0)
-        self.user3.get_sipre_client().set_codec(codec_name="opus/48000/2", codec_prio=0)
-        self.external_user1.get_sipre_client().set_codec(codec_name="opus/48000/2", codec_prio=0)
-
         self.user1.change_timeout(20)
         self.user2.change_timeout(20)
         self.user3.change_timeout(20)
