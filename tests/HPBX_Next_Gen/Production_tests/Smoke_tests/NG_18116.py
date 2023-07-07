@@ -9,9 +9,8 @@ from context import Context
 class NG_18116(StepTestCase):
     """
     @name: NG-18116
-    @summary: FMFM_sim_two_internal_users_ext_ext
-    @suite: HPBX_Next_Gen.Automation_functional_tests.FMFM_sim.call_from_external_user
-    @version: 1
+    @summary: Call from PSTN to a user with simultaneous FMFM to two internal users
+    @suite: HPBX_Next_Gen.Production_tests.Smoke_tests
     """
 
     def setUp(self):
@@ -20,7 +19,6 @@ class NG_18116(StepTestCase):
         self.user2 = self.context.get('user1')
         self.user3 = self.context.get('user2')
         self.user4 = self.context.get('user3')
-        self.cf = self.context.get("client_factory")
         self.user2.remove_all_fmfm()
         self.user2.add_fmfm(number=self.user3.get_extension(), order=50, timeout=10)
         self.user2.add_fmfm(number=self.user4.get_extension(), order=50, timeout=10)
@@ -35,7 +33,6 @@ class NG_18116(StepTestCase):
 
     def initialize(self, sm):
         # build execute info
-
         execute_info = {
             "bob": self.external_user3.get_sipre_client(),
             "alice": self.user4.get_sipre_client(),
@@ -49,6 +46,7 @@ class NG_18116(StepTestCase):
             "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
 
+        # run the test
         OrderedCall(**execute_info)
 
     def tearDown(self):

@@ -6,13 +6,12 @@ from time import sleep
 
 from pbxut.framework import PBXTestSuite
 from context import Context
-from audio_functions import AudioFileGenerator
 from hpbx_dm._MediaManager import MediaManager
 
 
-class check_callee(PBXTestSuite):
+class Smoke_tests(PBXTestSuite):
     """
-    @suite: HPBX_Next_Gen.Automation_functional_tests.BLF.check_callee
+    @suite: HPBX_Next_Gen.Production_tests.Smoke_tests
     """
 
     def setUpSuite(self):
@@ -26,16 +25,18 @@ class check_callee(PBXTestSuite):
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
         self.user4 = self.context.get('user4')
+        self.user5 = self.context.get('user5')
 
         self.user1.cleanup()
         self.user2.cleanup()
         self.user3.cleanup()
         self.user4.cleanup()
+        self.user5.cleanup()
 
         self.external_user1 = self.context.get('external_user1')
 
         # prepare phone numbers
-        self.user1.get_account().unassign_all_phone_numbers()
+        self.user1.account.unassign_all_phone_numbers()
         #
         self.user1.assign_phone_number()
 
@@ -69,7 +70,7 @@ class check_callee(PBXTestSuite):
         self.hg1.remove_all_members_from_hg()
         self.hg1.set_calling_method_for_hg('A')
 
-        self.user1.get_account().enable_call_recording()
+        self.user1.account.enable_call_recording()
         gcrb_freqs = [197, 313]
         gcre_freqs = [127, 617]
         self.context.set('gcrb_freqs', gcrb_freqs)
@@ -78,7 +79,7 @@ class check_callee(PBXTestSuite):
         gcrb_file = "/opt/smoke_production/audio/test_audio_197_313.wav"
         gcre_file = "/opt/smoke_production/audio/test_audio_127_617.wav"
 
-        mm = MediaManager(account=self.user1.get_account())
+        mm = MediaManager(account=self.user1.account)
         mm.deactivate_gcrb()
         mm.deactivate_gcre()
         mm.upload(name='gcrb_197_313', purpose='GCRB', path=gcrb_file)
@@ -89,9 +90,8 @@ class check_callee(PBXTestSuite):
         self.pg1.add_member_to_pg(self.user3)
 
     def tearDownSuite(self):
-        self.user1.get_account().unassign_all_phone_numbers()
-        self.user1.get_account().disable_call_recording()
-
+        self.user1.account.unassign_all_phone_numbers()
+        self.user1.account.disable_call_recording()
         self.user1.release_client()
         self.user2.release_client()
         self.user3.release_client()

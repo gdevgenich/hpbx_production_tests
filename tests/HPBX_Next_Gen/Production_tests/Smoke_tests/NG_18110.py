@@ -10,16 +10,14 @@ from step_manager.pbxut import StepTestCase
 class NG_18110(StepTestCase):
     """
     @name: NG-18110
-    @summary: Simple call from external user
-    @suite: HPBX_Next_Gen.Automation_functional_tests.Call_recording.Core
+    @summary: Simple call from PSTN
+    @suite: HPBX_Next_Gen.Production_tests.Smoke_tests
     """
 
     def setUp(self):
         self.context = Context.instance()
-
         self.user1 = self.context.get('external_user1')
         self.user2 = self.context.get('user1')
-        self.cf = self.context.get("client_factory")
 
     def initialize(self, sm):
         # build execute info
@@ -32,6 +30,8 @@ class NG_18110(StepTestCase):
             "work_dir": "/var/tmp/pjlog/",
             "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
+
+        # run the test
         SimpleCall(**execute_info)
 
     def tearDown(self):

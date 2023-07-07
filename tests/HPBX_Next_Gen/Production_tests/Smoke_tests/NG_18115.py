@@ -12,21 +12,17 @@ class NG_18115(StepTestCase):
     """
     @name: NG-18115
     @summary: Paging call with answer
-    @suite: HPBX_Next_Gen.Automation_functional_tests.Paging
+    @suite: HPBX_Next_Gen.Production_tests.Smoke_tests
     """
 
     def setUp(self):
         self.context = Context.instance()
-
         self.user1 = self.context.get('user1')
         self.user2 = self.context.get('user2')
         self.user3 = self.context.get('user3')
-        self.cf = self.context.get("client_factory")
-
         self.pg1 = self.context.get('pg1')
 
     def initialize(self, sm):
-
         # build execute info
         execute_info = {
             "bob": self.user1.get_sipre_client(),
@@ -34,12 +30,13 @@ class NG_18115(StepTestCase):
             "listeners": [],
             "call_to": self.user1.get_sip_uri(self.pg1.get_extension()),
             "default_check_audio": True,
-            "convert_to_call": self.user1.get_account().get_page_to_twowaycall_action(),
+            "convert_to_call": self.user1.account.get_page_to_twowaycall_action(),
             "sm": sm,
             "work_dir": "/var/tmp/pjlog/",
             "wav_file": "/opt/smoke_production/audio/test_audio_139_431.wav"
         }
 
+        # run the test
         PagingCall(**execute_info)
 
         # check call history
@@ -47,7 +44,8 @@ class NG_18115(StepTestCase):
                   'to': self.pg1.get_extension(), 'called_name': self.user2.get_display_name()}
 
         sm.add_step_before("Check Bob is connected", "Wait", duration=3.0)
-        sm.add_step("Check call history").add_expected(self.user1.get_account().check_call_history, calls=[call_1])
+        
+        sm.add_step("Check call history").add_expected(self.user1.account.check_call_history, calls=[call_1])
 
     def tearDown(self):
         pass

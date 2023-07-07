@@ -10,9 +10,9 @@ from sipne import BLFClientFactory
 from hpbx_dm import AccountLoader
 
 
-class AutomationFunctionalTests(PBXTestSuite):
+class Production_tests(PBXTestSuite):
     """
-    @suite: HPBX_Next_Gen.Automation_functional_tests
+    @suite: HPBX_Next_Gen.Production_tests
     """
 
     def setUpSuite(self):
@@ -59,9 +59,9 @@ class AutomationFunctionalTests(PBXTestSuite):
         self.main_account.release_user(self.user2)
         self.main_account.release_user(self.user3)
         self.main_account.release_user(self.user4)
+        self.main_account.release_user(self.user5)
 
         self.external_account.release_user(self.external_user1)
-        #
         # dispose accounts
         self.main_account.dispose()
         self.external_account.dispose()
@@ -96,7 +96,8 @@ class AutomationFunctionalTests(PBXTestSuite):
         self.user4 = self.main_account.acquire_user()
         self.user5 = self.main_account.acquire_user()
 
-        self.external_user1 = self.external_account.acquire_user_by_display_name(display_name=self.context.get("server_name"))
+        self.external_user1 = self.external_account.acquire_user_by_display_name(
+            display_name=self.context.get("server_name"))
 
         self.aa1 = self.main_account.acquire_aa()
         self.hg1 = self.main_account.acquire_hg()

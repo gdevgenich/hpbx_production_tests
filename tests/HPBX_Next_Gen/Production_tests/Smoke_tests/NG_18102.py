@@ -9,7 +9,7 @@ class NG_18102(StepTestCase):
     """
     @name: NG-18102
     @summary: Leave message for VMG by extension
-    @suite: HPBX_Next_Gen.Automation_functional_tests.VM_group
+    @suite: HPBX_Next_Gen.Production_tests.Smoke_tests
     """
 
     def setUp(self):
@@ -18,12 +18,11 @@ class NG_18102(StepTestCase):
         self.user1 = self.context.get("user1")
         self.user2 = self.context.get("user2")
         self.user3 = self.context.get("user3")
-        self.cf = self.context.get("client_factory")
         self.vmg1 = self.context.get("vmg1")
         # remove all voicemails
         self.user2.delete_all_voicemails()
         self.user3.delete_all_voicemails()
-        # remove emails
+
         # prepare VM group
         self.vmg1 = self.context.get("vmg1")
         self.vmg1.reset()
@@ -38,7 +37,7 @@ class NG_18102(StepTestCase):
         self.duration = 12
 
     def initialize(self, sm):
-
+        # build execute info
         execute_info = {
             "bob": self.user1.get_sipre_client(),
             "call_to": self.user1.get_sip_uri(self.vmg1.extension),
@@ -48,33 +47,30 @@ class NG_18102(StepTestCase):
             "sm": sm,
         }
 
-        SimpleCallVM(**execute_info)
-
-        sm.add_step("Wait for message", duration=240)
-
-        # getting transcript from third-party service takes long time
-        # here we assume that if email is sent, then file is present on FS
-
-        check_vm_cp_step = CheckVMCP(
+        check_vm_cp_step2 = CheckVMCP(
             vm_data=self.user2.get_last_voicemail,
-            vm_transcript=self.user3.download_last_transcript,
+            vm_transcript=self.user2.download_last_transcript,
             exp_transcript=self.transcript,
             sender_number=self.user1.get_extension(), path="/var/tmp/pjlog/"
         )
-        check_vm_cp_step.add_substeps_to_step(
-            sm.add_step("Check received VM from CP for user2")
-        )
 
-        check_vm_cp_step = CheckVMCP(
+        check_vm_cp_step3 = CheckVMCP(
             vm_data=self.user3.get_last_voicemail,
             vm_transcript=self.user3.download_last_transcript,
             exp_transcript=self.transcript,
             sender_number=self.user1.get_extension(), path="/var/tmp/pjlog/"
         )
-        check_vm_cp_step.add_substeps_to_step(
-            sm.add_step("Check received VM from CP for user3")
-        )
 
+        # run the test
+        SimpleCallVM(**execute_info)
+
+        sm.add_step("Wait for message", duration=240)
+
+        check_vm_cp_step2.add_substeps_to_step(sm.add_step("Check received VM from CP for user2"))
+
+        check_vm_cp_step3.add_substeps_to_step(sm.add_step("Check received VM from CP for user3"))
+
+        # check call history
         call_1 = {
             'from': self.user1.get_extension(),
             'caller_name': self.user1.get_display_name(),
@@ -82,9 +78,7 @@ class NG_18102(StepTestCase):
             'called_name': self.vmg1.display_name
         }
 
-        sm.add_step("Check call history").add_expected(
-            self.user2.account.check_call_history, calls=[call_1]
-        )
+        sm.add_step("Check call history").add_expected(self.user2.account.check_call_history, calls=[call_1])
 
     def tearDown(self):
         pass
