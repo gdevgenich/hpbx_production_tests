@@ -61,7 +61,7 @@ class NG_18111(StepTestCase):
         sm.add_step("Check devices are connected after unpark")\
             .add_expected(devices_on_call, device1=self.user2.get_sipre_client(), device2=self.user3.get_sipre_client())
         
-        check_audio_after_unpark.add_substeps_to_step("Check devices are connected after unpark")
+        check_audio_after_unpark.add_substeps_to_step(sm.add_step("Check audio after unpark"))
         
         sm.add_step("End all calls", self.user2.get_sipre_client().hangup, 5.0)
         
