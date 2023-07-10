@@ -51,7 +51,7 @@ fpm   --name "$DEB_PACKAGE_NAME" \
       --depends "${PYTHON_BINARY}-context = 1.4" \
       --depends "${PYTHON_BINARY}-future-comparators = 1.0.1" \
       --depends "${PYTHON_BINARY}-hpbx-base = 2.83" \
-      --depends "${PYTHON_BINARY}-hpbx-dm = 7.96" \
+      --depends "${PYTHON_BINARY}-hpbx-dm = 7.98" \
       --depends "${PYTHON_BINARY}-ips-client = 4.14" \
       --depends "${PYTHON_BINARY}-ips-control = 1.24" \
       --depends "${PYTHON_BINARY}-log-functions = 1.0" \
