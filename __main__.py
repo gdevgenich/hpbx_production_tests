@@ -40,6 +40,11 @@ class TestProgram(object):
         config_name = "./settings/settings.xml"
         admin_login = argv[2]
         admin_password = argv[3]
+        try:
+            test_plan = argv[4]
+        except IndexError:
+            print(f"Warning: parameter test_cases is empty, default full execution test plan will be used!")
+            test_plan = "ALL"
 
         file_context = cr.read(config_name)
 
@@ -52,14 +57,29 @@ class TestProgram(object):
         for plugin in file_context.plugins:
             self.__log.debug('Create plugin: plugin_class = {plugin_class!r}'.format(plugin_class=plugin.plugin_class))
             if plugin.plugin_id == "MailReporterPlugin":
-                subject = f'[AUTOTEST] {name} smoke production report:'+' {{ case_resolution }}'
+                if test_plan == "ALL":
+                    subject = f'[AUTOTEST] {name} smoke production full execution report:'\
+                              + ' {{ case_resolution }}'
+                else:
+                    subject = f'[AUTOTEST] {name} smoke production partial execution report:'\
+                              + ' {{ case_resolution }}'
                 subject = ("subject", subject)
                 plugin.params.append(subject)
+            elif plugin.plugin_id == "SimpleFilterPlugin":
+                if test_plan == "ALL":
+                    plugin.params.append(("filename", "plan.txt"))
+                else:
+                    cases_list = test_plan.split(',')
+                    with open("custom_plan.txt", "w") as file:
+                        for case in cases_list:
+                            file.write(case.strip() + '\n')
+                    plugin.params.append(("filename", "custom_plan.txt"))
             elif plugin.plugin_id == "ContextPlugun":
                 plugin.params.append(("test_profile", name))
             inst = cm.inst_create(inst_name=plugin.plugin_class, args=[], kwargs={"context": file_context})
             cm.inst_initialize(inst, args=[runner], kwargs=plugin.params)
             runner.plugins.append(inst)
+
         global_context.set("production", True)
 
     def post_process(self, runner):
