@@ -13,7 +13,6 @@
     </plugin>
 
     <plugin id="SimpleFilterPlugin" class="pbxut_plugin.simple_filter.SimpleFilterPlugin">
-        <param name="filename" value="plan.txt" />
     </plugin>
 
     <!-- Context reader plugin -->
