@@ -45,6 +45,11 @@ class Smoke_tests(PBXTestSuite):
         self.user3.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
         self.external_user1.acquire_sip_client(self.cf, path="/var/tmp/pjlog")
 
+        self.user1.get_sipre_client().set_codecs_priority(codecs_priority=['PCMU/8000/1', 'G729/8000/1'])
+        self.user2.get_sipre_client().set_codecs_priority(codecs_priority=['PCMU/8000/1', 'G729/8000/1'])
+        self.user3.get_sipre_client().set_codecs_priority(codecs_priority=['PCMU/8000/1', 'G729/8000/1'])
+        self.external_user1.get_sipre_client().set_codecs_priority(codecs_priority=['PCMU/8000/1', 'G729/8000/1'])
+
         self.user1.change_timeout(20)
         self.user2.change_timeout(20)
         self.user3.change_timeout(20)
